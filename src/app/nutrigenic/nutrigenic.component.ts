@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nutrigenic.component.scss']
 })
 export class NutrigenicComponent {
-  underConstruction: boolean = true;
+  underConstruction: boolean = false;
   
     get containerClass(): any {
         return {
