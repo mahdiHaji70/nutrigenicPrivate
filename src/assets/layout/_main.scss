@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: $scale;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.layout-wrapper {
+  min-height: 100vh;
+  font-family: Prompt;
+}
+
+.web-center {
+  text-align: -webkit-center;
+}
+
+.web-left {
+  text-align: -webkit-left;
+}
+.web-right {
+  text-align: -webkit-right;
+}
+
+.fm-rubik{
+  font-family: Rubik;
+}
+
+.fm-rubik-bold{
+  font-family: Rubik-Bold;
+}
+
+.fm-prompt{
+  font-family: Prompt;
+}
+
+.fm-prompt-bold{
+  font-family: Prompt-Bold;
+}
+
+.p-dialog-blur {
+  filter: blur(5px); 
+  pointer-events: none;
+  scroll-behavior: unset;
+}

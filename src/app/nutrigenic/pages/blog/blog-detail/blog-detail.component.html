@@ -1,0 +1,101 @@
+<div class="web-center">
+    <div class="web-left row" style="width: 90%;">
+        <div class="col-md-8 mt-5 web-left">
+            <div class="w-100" style="height: 300px;">
+                <img class="w-100 h-100" src="../../../../assets/images/blog-detail.png" />
+            </div>
+            <div class="mt-4 web-left mx-2 d-flex">
+                <button [style.background-color]="'#dfdfef'" class="btn btn-primary py-1 mt-2 mx-2 tagbutton d-flex">
+                    <img src="../../../../../assets/images/skipping-rope.png" style="width: 16px;height: 16px;" class="mx-2"
+                        alt="">
+                    <span>Fitness</span>
+                </button>
+                <button [style.background-color]="'#dfdfef'" class="btn btn-primary py-1 mt-2 mx-2 tagbutton d-flex">
+                    <img src="../../../../../assets/images/pin.png" style="width: 16px;height: 16px;" class="mx-2" alt="">
+                    <span>Yoga, gym</span>
+                </button>
+            </div>
+            <div class="fw-bold fs-3 mt-4 responsiveFont  fm-rubik">
+                5 Simple yoga poses for a Beggineer
+            </div>
+            <div class="mt-4 responsiveFont  fm-rubik">
+                Discover how yoga can improve your sleep quality with these easy folllow poses. Open now and read come on.
+            </div>
+            <div class="mt-4 responsiveTextFont  fm-rubik">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras magna nisl, scelerisque vitae venenatis at,
+                iaculis vitae libero. Praesent at sapien ac ante posuere auctor a sit amet nisl. Cras blandit nisl condimentum
+                nisl efficitur, quis lobortis sem gravida. Ut lectus turpis, blandit id magna ut, fringilla mollis justo. Aenean
+                consectetur laoreet mi, eu pharetra purus. Nulla sed viverra velit. Etiam a suscipit tellus. Nunc porttitor
+                interdum velit, ac pharetra felis rutrum vel. Aenean tempor molestie risus, iaculis placerat elit vestibulum at.
+                Ut sit amet eros iaculis, tempor sem ut, lobortis urna. Etiam tempor ante sed massa sodales tristique. Nam
+                molestie, turpis ut rutrum imperdiet, est mi aliquet turpis, eget elementum dolor erat ornare augue. Sed leo
+                lectus, laoreet sit amet sodales sit amet, feugiat ac mi. Cras dignissim lorem sit amet tellus sollicitudin, ut
+                imperdiet ligula dignissim. Cras vestibulum est orci.
+                Praesent ullamcorper erat augue, in porta mi volutpat sit amet. Curabitur neque tortor, semper nec lacus nec,
+                rhoncus fringilla neque. Nulla facilisi. Donec finibus leo condimentum egestas consequat. Nulla ante libero,
+                pulvinar a purus sed, pulvinar placerat eros. Nulla nec scelerisque massa. Donec at nisl nec turpis aliquam
+                ultrices nec at augue. Nulla dapibus, metus eu iaculis vulputate, ante libero bibendum libero, nec semper sem
+                metus nec ligula.
+                Donec quis nulla urna. Cras iaculis, massa id pellentesque imperdiet, dolor odio condimentum mi, mollis congue
+                nisi risus quis mi. Integer ut arcu arcu. Nulla bibendum augue in mauris congue tristique. Nam nec hendrerit
+                nisi, vitae accumsan ipsum. Vestibulum vel semper est. Integer purus lectus, sollicitudin rutrum tempus quis,
+                sollicitudin sit amet velit. Vestibulum pulvinar dui eget aliquam lacinia.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie odio ac sapien hendrerit, ut ultrices
+                sapien congue. Quisque quis arcu iaculis urna imperdiet lobortis. In finibus dui rutrum sapien vulputate
+                molestie. Nullam eu tincidunt risus. Integer consectetur ante eget malesuada dignissim. In placerat viverra
+                ipsum, sed dapibus velit tincidunt id. Etiam ligula eros, consequat quis elit eget, varius posuere quam.
+                Maecenas id dolor at diam lacinia vulputate. In auctor sit amet eros interdum consequat. Integer lacinia lacinia
+                ex vel lobortis. Aliquam bibendum nibh enim, vel semper lorem maximus eget. Praesent et quam ac velit finibus
+                convallis.
+                Maecenas fringilla hendrerit lacus, placerat sollicitudin lorem feugiat ut. Vestibulum at suscipit nulla, eget
+                dictum tellus. Sed in tincidunt justo. Etiam elementum elit sit amet nisl pellentesque, et varius diam luctus.
+                Duis nec dui neque. Pellentesque lacinia sodales eros, sit amet blandit libero faucibus sed. Vivamus lectus
+                lectus, ornare sed gravida vitae, volutpat a lectus. Proin vitae risus scelerisque mauris feugiat tristique.
+                Nullam sed commodo est. Maecenas vel tempor justo. Quisque ornare tortor risus, sit amet interdum diam egestas
+                quis. Aenean pulvinar metus mauris, malesuada vehicula metus viverra pellentesque. Praesent ac est finibus,
+                ultrices felis quis, mattis est.
+            </div>
+            <div class="mt-5 responsiveTextFont  fm-rubik">
+                Nome autore
+            </div>
+            <div class="mt-1 mb-5 responsiveTextFont  fm-rubik">
+                Tuesday 30/01/2024
+            </div>
+        </div>
+        <div class="col-md-4 mt-5">
+            <div class="mx-5 responsiveFont  fm-rubik">Articles you might like:</div>
+            <ng-container *ngFor="let item of listCardData">
+                <ng-container *ngTemplateOutlet="
+            listCards;
+            context: { $implicit: item }
+          "></ng-container>
+            </ng-container>
+        </div>        
+    </div>
+</div>
+
+<ng-template #listCards let-item>
+    <div class="mb-3 mx-5 position-relative responsiveCardFont fm-rubik" style="width: 85%;">
+        <div class="card w-100 p-0 z-2">
+            <div class="w-100 z-1">
+                <img class="w-100" [src]="item.imgUrl"
+                    style="border-radius: 4% 4% 0 0;" />
+            </div>
+            <div class="card-body">
+                <div class="fw-bold">
+                    {{item.title}}
+                </div>
+                <div class="web-left mt-2"><span>{{ item.description }}</span></div>
+                <div class="d-flex mt-4">
+                    <button [style.background-color]="'#dfdfef'"
+                        class="btn btn-primary py-1 mt-2 mx-2 categoriesButton">
+                        {{item.tag}}
+                    </button>
+                    <span class="fw-bold  mt-2" style="position: absolute;right: 5%;cursor: pointer;" (click)="navigateToBlogDetail()">
+                        Read more
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

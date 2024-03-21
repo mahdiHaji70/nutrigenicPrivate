@@ -1,0 +1,78 @@
+@media screen and (min-width: 1700px) {
+  .responsiveFont {
+    font-size: 1.7rem;
+  }
+
+
+.coreValuesItem {
+  margin-right: 3rem;
+  min-width: 150px;
+}
+
+.coreValuesmargin{
+  margin-top: 6rem !important;
+}
+
+.ourFounderMargin{
+  margin-top: 72rem !important;
+}
+
+.getStartButton {
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 15px;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+}
+
+@media screen and (max-width: 1699px) {
+  .responsiveFont {
+    font-size: 1rem;
+  }
+
+
+.coreValuesItem {
+  margin-right: 2rem;
+  min-width: 100px;
+}
+.ourFounderMargin{
+  margin-top: 45rem !important;
+}
+
+.getStartButton {
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 15px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+}
+
+.secondDiv {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  margin-top: -9%;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.thirdDiv {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  margin-top: -15%;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  z-index: 2;
+}

@@ -1,0 +1,20 @@
+.categoriesButton{
+    //min-width: 115px;
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 30px;
+    color: #5D5D66;
+}
+
+@media screen and (min-width: 1700px) {
+    .responsiveFont {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media screen and (max-width: 1699px) {
+    .responsiveFont {
+      font-size: 1rem;
+    }
+  }

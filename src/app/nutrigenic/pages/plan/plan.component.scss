@@ -1,0 +1,58 @@
+ul li::marker {
+  //content: '•'; /* Use a bullet character */
+  color: #EF870A;
+  /* Change the color of the bullet */
+  margin-right: 0.5em;
+  /* Adjust spacing between bullet and text */
+  font-size: 1.3rem;
+}
+
+
+.btn-plan {
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-planMeal {
+  border: 2px solid #FAC381;
+  background-color: #F9F9FB;
+  color: black;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.selectedButtonList {
+  background-color: #F8A94A !important;
+  border-color: #EF870A;
+  color: white;
+}
+
+.selectedWeeksNum {
+  opacity: 1 !important;
+}
+
+.btn-orderNow {
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 20px;
+}
+
+.cardTitle {
+  color: #EF870A;
+  font-weight: 1000;
+  font-size: 3rem;
+}
+
+.input-promo {
+  border-radius: 10px;
+  border: none;
+  background-color: #F0F4F8;
+}
+
+.btn-apply {
+  border: 2px solid black;
+  border-radius: 25px;
+}

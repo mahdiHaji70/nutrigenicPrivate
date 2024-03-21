@@ -1,0 +1,53 @@
+<div class="web-center">
+    <div class="position-relative">
+        <div class="position-absolute fw-bold fs-3 text-black" style="margin-left: 45%;
+        margin-top: 100px;">
+            On our blog
+        </div>
+        <div class="w-100">
+            <img class="w-100" src="../../../../assets/images/blog-top.png" />
+        </div>
+    </div>
+    <div class="mt-5">
+        <button *ngFor="let item of tabItems"
+            [style.background-color]="selectedMasterTab === item ? '#dfdfef' : 'white'"
+            (click)="selectedMasterTab = item" class="btn btn-primary mt-2 mx-2 categoriesButton">
+            {{ item }}
+        </button>
+    </div>
+    <div class="w-75 d-flex mt-5 row mb-5" style="max-width: 75%;">
+        <ng-container *ngFor="let item of listCardData">
+            <ng-container *ngTemplateOutlet="
+        listCards;
+        context: { $implicit: item }
+      "></ng-container>
+        </ng-container>
+
+    </div>
+</div>
+
+<ng-template #listCards let-item>
+    <div class="col-md-4 mb-3 position-relative responsiveFont fm-rubik">
+        <div class="card w-100 p-0 z-2">
+            <div class="w-100 z-1">
+                <img class="w-100" [src]="item.imgUrl"
+                    style="border-radius: 4% 4% 0 0;" />
+            </div>
+            <div class="card-body">
+                <div class="fw-bold">
+                    {{item.title}}
+                </div>
+                <div class="web-left mt-2"><span>{{ item.description }}</span></div>
+                <div class="d-flex mt-4">
+                    <button [style.background-color]="'#dfdfef'"
+                        class="btn btn-primary py-1 mt-2 mx-2 categoriesButton">
+                        {{item.tag}}
+                    </button>
+                    <span class="fw-bold  mt-2" style="position: absolute;right: 5%;cursor: pointer;" (click)="navigateToBlogDetail()">
+                        Read more
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

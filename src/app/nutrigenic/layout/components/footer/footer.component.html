@@ -1,0 +1,21 @@
+<div class="bg-black web-center">
+    <div>
+        <img src="../../../../assets/images/Logo-white.png"
+            style="height: 10rem;width: 16rem;object-fit: contain;" />
+    </div>
+    <div class="d-flex w-25">
+        <img src="../../../../assets/images/facebook.png" class="socialIcons" />
+        <img src="../../../../assets/images/instagram.png" class="socialIcons"/>
+        <img src="../../../../assets/images/youtube.png" class="socialIcons" />
+        <img src="../../../../assets/images/music.png" class="socialIcons"  />
+    </div>
+    <div class="mt-5 pb-5">
+        <ul class="horizontal-menu">
+            <li class="fs-6" *ngFor="let item of menuItems" (click)="onItemClick(item)">
+                <span class="fm-rubik">
+                    {{ item }}
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

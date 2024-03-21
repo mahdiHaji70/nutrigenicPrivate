@@ -1,0 +1,22 @@
+.horizontal-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+.horizontal-menu li {
+    display: inline-block;
+    margin-right: 2rem;
+    cursor: pointer;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  .socialIcons {
+    max-width: 18px;
+    min-height: 18px;
+    margin: auto;
+  }
+  

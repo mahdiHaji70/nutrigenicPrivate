@@ -1,0 +1,344 @@
+@media screen and (min-width: 1120px) and (max-width: 1699px) {
+  .textbox {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 10%;
+    width: 35%;
+    padding: 10px;
+    z-index: 1;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: left;
+
+  }
+
+  .responsiveFont {
+    font-size: 1rem;
+  }
+
+  .ourMission {
+    margin-top: 3rem;
+    font-size: 1rem;
+  }
+
+  .fs08 {
+    font-size: 0.8rem;
+  }
+
+
+  .user-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    min-width: 170px;
+  }
+
+  .getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1119px) {
+  .textbox {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 10%;
+    width: 35%;
+    padding: 10px;
+    z-index: 1;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .responsiveFont {
+    font-size: 1rem;
+  }
+
+  .ourMission {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+
+  .fs08 {
+    font-size: 0.8rem;
+  }
+
+  .user-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    min-width: 170px;
+  }
+
+  .getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+}
+
+
+@media screen and (min-width: 1700px) {
+  .baseContainer {
+    position: relative;
+    display: flex;
+    max-height: 550px;
+  }
+
+  .responsiveFont {
+    font-size: 1.7rem;
+  }
+
+  .fs08 {
+    font-size: 1.2rem;
+  }
+
+  .textbox {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 10%;
+    width: 35%;
+    padding: 10px;
+    z-index: 1;
+    font-family: Prompt;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .ourMission {
+    margin-top: 8rem;
+    font-size: 1.5rem;
+  }
+
+
+  .user-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    min-width: 210px;
+  }
+
+  .getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.baseContainer {
+  position: relative;
+  display: flex;
+  max-height: 350px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+}
+
+.overlayMasterPlan {
+  position: absolute;
+  //top: 0;
+  //left: 0;
+  width: 90%;
+  height: 77%;
+  opacity: 0.8;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 90%);
+}
+
+.imgMain {
+  display: block;
+  width: 100%;
+  height: auto;
+  top: 0;
+  right: 0;
+  float: right;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.leftDish {
+  width: 90%;
+  min-width: 90%;
+  height: auto;
+  display: block;
+}
+
+.leftDish img {
+  width: 35%;
+  height: auto;
+}
+
+.rightDish {
+  width: 90%;
+  min-width: 90%;
+  right: 0px;
+  height: auto;
+  display: block;
+  margin-top: 50%;
+}
+
+
+.mx-10 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.secondDiv {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  margin-top: -5%;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  //z-index: 2;
+}
+
+
+.user-icon img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 0px;
+}
+
+.partner-icon {
+  align-items: center;
+}
+
+.partner-icon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 0px;
+  object-fit: contain;
+}
+
+.mastrPlan {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  text-align: -webkit-center;
+}
+
+.mastrPlan button {
+  min-width: 115px;
+  align-items: center;
+  background-color: white;
+  border: solid 1px #d7d7de;
+  border-radius: 15px;
+  color: #5D5D66;
+}
+
+.templateStyles {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.commentStars {
+  width: 20px;
+  height: 20px;
+  background-color: #219653;
+  margin-right: 0.1rem;
+}
+
+.responsiveWidth {
+  width: 90%;
+  justify-content: center;
+}
+
+.helpSector {
+  width: 100%;
+  min-height: 320px;
+  border-top-right-radius: 15%;
+  border-top-left-radius: 15%;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  text-align: -webkit-center;
+}
+
+.helpButton {
+  align-items: center;
+  background-color: #EF870A;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0rem 0.7rem 1.2rem #edba7b !important;
+}
+
+.horizontal-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialIcons {
+  max-width: 18px;
+  min-height: 18px;
+  margin: auto;
+}
+
+.masterPlanCard {
+  min-width: 45% !important;
+  max-width: 45% !important;
+}
+
+.masterPlanImg {
+  min-width: 120px;
+  max-width: 140px;
+  max-height: 140px;
+  min-height: 120px;
+}
+
+
+.horizontal-menu li {
+  display: inline-block;
+  margin-right: 2rem;
+  cursor: pointer;
+  font-family: Prompt;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.shadow {
+  box-shadow: 0.7rem 0.7rem 1.2rem #1111 !important;
+}
+
