@@ -5,6 +5,9 @@ import { PlanComponent } from './pages/plan/plan.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogDetailComponent } from './pages/blog/blog-detail/blog-detail.component';
+import { OurShopComponent } from './pages/ourshop/ourshop.component';
+import { OurShopDetailComponent } from './pages/ourshop/ourshopdetail/ourshop-detail.component';
+
 
 export const NutrigenicRoutes: Routes = [
     {
@@ -17,6 +20,8 @@ export const NutrigenicRoutes: Routes = [
             { path: 'AboutUs', component: AboutUsComponent },
             { path: 'Blog', component: BlogComponent },
             { path: 'blogDetail', component: BlogDetailComponent },
+            { path: 'OurShop', component: OurShopComponent },
+            { path: 'ourshopDetail', component: OurShopDetailComponent },
         ]
     }
 ];

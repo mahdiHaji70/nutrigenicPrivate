@@ -13,6 +13,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogDetailComponent } from './pages/blog/blog-detail/blog-detail.component';
 import { DialogModule } from 'primeng/dialog';
+import { OurShopComponent } from './pages/ourshop/ourshop.component';
+import { OurShopDetailComponent } from './pages/ourshop/ourshopdetail/ourshop-detail.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DialogModule } from 'primeng/dialog';
         PlanComponent,
         AboutUsComponent,
         BlogComponent,
-        BlogDetailComponent
+        BlogDetailComponent,
+        OurShopComponent,
+        OurShopDetailComponent
     ],
     imports: [
         CommonModule,

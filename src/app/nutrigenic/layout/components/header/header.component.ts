@@ -17,7 +17,6 @@ export class HeaderComponent {
     constructor(private router: Router) { }
     ngOnInit(): void {
         this.selectedItem = this.router.url.replace('/', '') == 'AboutUs' ? 'About us' : this.router.url.replace('/', '');
-
         this.items = [
             {
                 label: 'Home',
@@ -65,11 +64,17 @@ export class HeaderComponent {
                 .navigate(['/AboutUs'])
                 .then(() => { })
                 .catch(() => { });
+       else  if (item.label == 'Our shop')
+        this.router
+            .navigate(['/OurShop'])
+            .then(() => { })
+            .catch(() => { });
         else
             this.router
                 .navigate(['/' + item.label])
                 .then(() => { })
                 .catch(() => { });
+       
     }
 
     loginPopupManager() {
