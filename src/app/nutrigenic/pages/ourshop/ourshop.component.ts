@@ -20,6 +20,48 @@ export class OurShopComponent {
                 description: 'The best part is that green leafy vegetables',
                 price: '$206.60'
             },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
+            {
+                imgUrl: '../../../../assets/images/masterImage.png',
+                title: 'Almond Protein',
+                description: 'The best part is that green leafy vegetables',
+                price: '$206.60'
+            },
          ];
     }
 

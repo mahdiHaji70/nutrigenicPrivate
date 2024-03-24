@@ -5,7 +5,7 @@
         {{ item }}
     </button>
 </div>
-<div class="w-75 d-flex mt-5 row mb-5" style="max-width: 75%;">
+<div class="w-100 d-flex mt-5 row mb-5" style="max-width: 100%;">
     <ng-container *ngFor="let item of listCardData">
         <ng-container *ngTemplateOutlet="
     listCards;
@@ -15,9 +15,9 @@
 
 </div>
 <ng-template #listCards let-item>
-    <div class="col-md-4 mb-3 position-relative responsiveFont fm-rubik">
-        <div class="card w-100 p-0 z-2">
-            <div class="w-100 z-1">
+    <div class="col-md-2  position-relative responsiveFont fm-rubik">
+         <div class="card">
+            <div class="">
                 <img class="w-100" [src]="item.imgUrl"
                     style="border-radius: 4% 4% 0 0;" />
             </div>
