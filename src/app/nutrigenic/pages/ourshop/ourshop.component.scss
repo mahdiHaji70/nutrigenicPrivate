@@ -12,7 +12,13 @@
     border: none;
     border-radius: 25px;
   }
-
+  .btn-dec-ourshop {
+    align-items: center;
+    background-color: white !important;
+    border:solid 1px #EF870A;
+    border-radius: 25px;
+    color:black !important;
+  }
   @media screen and (min-width: 1700px) {
     .responsiveFont {
       font-size: 1.4rem;

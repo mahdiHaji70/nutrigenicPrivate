@@ -27,11 +27,13 @@
                 </div>
                 <div class="web-left mt-2"><span>{{ item.description }}</span></div>
                 <div class="fw-bold"><span>{{ item.price }}</span></div>
-                <button class="btn btn-primary mt-2 fw-bold btn-ourshop px-3 py-2 fs-5">-</button>
-                <a>1</a>
-                <button class="btn btn-primary mt-2 fw-bold btn-ourshop px-3 py-2 fs-5">+</button>
-                <button class="btn btn-primary mt-2 fw-bold btn-ourshop px-3 py-2 fs-5">Add to cart </button>
-            </div>
+                <div class="fw-bold">
+                <button class="btn btn-primary  btn-dec-ourshop " (click)=decreaseBtnClick() >-</button>
+                <span> {{this.counter}} </span>
+                <button class="btn btn-primary btn-ourshop " (click)=increaseBtnClick() >+</button>
+                <button class="btn btn-primary  btn-ourshop">Add to cart</button>
+                </div>
+        </div>
         </div>
     </div>
 </ng-template>
