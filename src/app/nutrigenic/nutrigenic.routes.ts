@@ -19,7 +19,6 @@ export const NutrigenicRoutes: Routes = [
             { path: 'blog', component: BlogComponent },
             { path: 'blogDetail', component: BlogDetailComponent },
             { path: 'our-shop', component: OurShopComponent },
-
         ]
     }
 ];

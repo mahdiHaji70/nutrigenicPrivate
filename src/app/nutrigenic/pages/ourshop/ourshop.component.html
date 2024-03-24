@@ -7,9 +7,9 @@
                 style="font-size: 1.143rem;">
                 {{ item }}
             </button>
-            <input type="text" class="p-2 input-promo mainLoginInput fm-rubik" placeholder="&#61442; Search meal or ingredient..."
-            style="font-size: 1rem;font-weight: bold;" />
-            
+            <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
+                placeholder="&#61442; Search meal or ingredient..." style="font-size: 1rem;font-weight: bold;" />
+
         </div>
         <div class="w-100 row mt-4 row mb-5" style="max-width: 100%;">
             <ng-container *ngFor="let item of listCardData">
@@ -33,23 +33,28 @@
             <div class="card-body web-left p-0">
                 <div class="fw-bold mt-3" style="font-size: 1.143rem;">
                     {{item.title}}
-                    <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false"></p-rating>
+
+                    <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false"
+                    [style.float]="'right'"
+                    [style.font-size]="'1rem'"></p-rating>
+
                 </div>
                 <div class="web-left mt-2" style="font-size: 1rem;"><span>{{ item.description }}</span></div>
                 <div class="fw-bold mt-3" style="font-size: 1rem;color: #311C02;"><span>{{ item.price }}</span></div>
                 <div class="fw-bold mt-4">
                     <button class="btn btn-dec-ourshop p-0" (click)="decreaseBtnClick()" style="margin-right: 0.5rem;">
-                        <i class="pi pi-minus fw-bold"
-                        style="padding-left: 0.6rem;padding-right: 0.6rem;padding-top: 0.6rem;padding-bottom: 0.6rem;
+                        <i class="pi pi-minus fw-bold" style="padding: 0.6rem;
                         font-size: 0.8rem;color: #EF870A;"></i>
                     </button>
                     <span> {{this.counter}} </span>
-                    <button class="btn btn-primary btn-ourshop p-0" (click)="increaseBtnClick()" style="margin-left: 0.5rem;">
-                        <i class="pi pi-plus fw-bold"
-                        style="padding-left: 0.6rem;padding-right: 0.6rem;padding-top: 0.6rem;padding-bottom: 0.6rem;
+                    <button class="btn btn-primary btn-ourshop p-0" (click)="increaseBtnClick()"
+                        style="margin-left: 0.5rem;">
+                        <i class="pi pi-plus fw-bold" style="padding: 0.6rem;
                         font-size: 0.8rem;"></i>
                     </button>
-                    <button class="btn btn-primary fw-bold btn-ourshop fm-prompt" style="float: right;font-size: 1rem;border-radius: 10px;padding-left: 1rem;padding-right: 1rem;">Add to cart</button>
+                    <button class="btn btn-primary fw-bold btn-ourshop fm-prompt"
+                        style="float: right;font-size: 1rem;border-radius: 10px;padding-left: 1rem;padding-right: 1rem;">Add
+                        to cart</button>
                 </div>
             </div>
         </div>
