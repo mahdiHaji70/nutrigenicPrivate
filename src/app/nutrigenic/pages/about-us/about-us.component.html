@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-8 web-left">
                 <div>
-                    <div class="fs-3 text-black">ABOUT US</div>
-                    <div class="responsiveFont fm-rubik mt-3" style="width: 85%;">
+                    <div class="t-color">ABOUT US</div>
+                    <div class="fm-rubik mt-3 text-color" style="width: 85%;">
                         At NutriGenic, we are committed to transforming the meal delivery experience with a focus on
                         <span class="fw-bold">excellence</span> and <span class="fw-bold">innovation</span>. Our mission
                         is to provide a culinary journey <span class="fw-bold">unlike any other</span>,
@@ -32,8 +32,8 @@
         <div class="col-md-3">
             <img src="../../../../assets/images/about-us-spicy.png" class="w-100" alt="">
         </div>
-        <div class="col-md-6 web-left mt-3">
-            <div class="responsiveFont fm-rubik">
+        <div class="col-md-6 web-right mt-3">
+            <div class="fm-rubik text-color" style="width: 85%;">
                 We are an elite team of food, nutrition and fitness experts, driven by a firm commitment to
                 sustainability in every aspect of our operations. Our dedicated focus on sustainability encompasses
                 every step, from responsibly sourcing environmentally friendly materials to reducing waste and
@@ -43,9 +43,10 @@
                 this dedication extends to our partnerships and suppliers, collaboratively promoting environmentally
                 conscious practices across our entire supply chain.
             </div>
-            <div class="web-right mt-2">
-                <button class="btn btn-primary mt-2 fw-bold getStartButton">Get started
-                    <i class="pi pi-arrow-right text-white fs08"></i>
+            <div class="mt-2">
+                <button class="btn btn-primary mt-4 fw-bold getStartButton fm-prompt-button">
+                    <span>Get started</span>
+                    <i class="pi pi-arrow-right text-white arrow-icon"></i>
                 </button>
             </div>
         </div>
@@ -54,12 +55,13 @@
         </div>
     </div>
     <div class="secondDiv">
-        <p class="mt-4 fs-3 text-black">CORE VALUES</p>
+        <p class="mt-4 t-color">CORE VALUES</p>
         <div class="web-center mt-5">
-            <div *ngFor="let item of coreValues" class="d-flex mt-3 web-left coreValuesmargin fm-rubik" style="width: 65%;opacity: 1;cursor: pointer;"
-                (mouseover)="hoveredCoreValue = item.title" (mouseout)="hoveredCoreValue = null"
+            <div *ngFor="let item of coreValues" class="d-flex mt-3 web-left coreValuesmargin fm-rubik text-color"
+                style="width: 65%;opacity: 1;cursor: pointer;" (mouseover)="hoveredCoreValue = item.title"
+                (mouseout)="hoveredCoreValue = null"
                 [style.opacity]="hoveredCoreValue === item.title ? '1' : (hoveredCoreValue === null ? '1' : '0.3')">
-                <img [src]="item.imgUrl" style="width: 80px;height: 80px;border-radius: 50%;" alt="">
+                <img [src]="item.imgUrl" style="width: 110px;height: 110px;" alt="">
                 <div class="responsiveFont coreValuesItem">
                     <span>{{item.title}}</span>
                     <br />
@@ -67,17 +69,19 @@
                 </div>
                 <div class="web-left responsiveFont">{{item.description}}</div>
             </div>
-            <div class="mt-2">
-                <button class="btn btn-primary mt-2 fw-bold getStartButton">Get started
-                    <i class="pi pi-arrow-right text-white fs08"></i>
+            <div class="mt-2 mb-2">
+                <button class="btn btn-primary mt-4 fw-bold getStartButton fm-prompt-button">
+                    <span>Get started</span>
+                    <i class="pi pi-arrow-right text-white arrow-icon"></i>
                 </button>
             </div>
         </div>
     </div>
     <div class="w-75 row ourFounderMargin">
         <div class="col-md-8 web-left">
-            <div class="fs-3 text-black">OUR FOUNDER</div>
-            <div class="mt-3 responsiveFont fm-rubik">Our culinary journey began with the vision of our passionate founder,
+            <div class="t-color">OUR FOUNDER</div>
+            <div class="mt-3 fm-rubik text-color">Our culinary journey began with the vision of our
+                passionate founder,
                 Taoufik Hannachi, an accomplished professional chef with 18 years of
                 experience in the culinary world. His culinary expertise and dedication to
                 crafting exceptional meals form the cornerstone of our mission. Inspired by
@@ -98,7 +102,7 @@
         <div class="d-flex w-50">
             <div class="mt-5" style="width: 80px;height: 80px;margin-left: 5rem;margin-right: 2rem;"><img
                     src="../../../../assets/images/about-us-quote.png" class="w-100" /></div>
-            <div class="web-left responsiveFont mt-5 fm-rubik" style="font-style: italic;">
+            <div class="web-left mt-5 fm-rubik text-color" style="font-style: italic;">
                 From a young age, my interest lay in the joy of life, food, the ultimate happiness. My mother, the
                 inspiring artwork, indulged my curiosity from a tender age and nurtured this inquisitiveness into a
                 hunger. The rules I learned at my mother’s stove laid the unwavering foundation for my desire to be
@@ -107,26 +111,27 @@
             </div>
         </div>
         <div class="my-5 mt-5 web-left" style="margin-left: 7rem;">
-            <img src="../../../../assets/images/Taoufik-Hannachi.png" class="w-25" alt="">
+            <img src="../../../../assets/images/Taoufik-Hannachi.png" 
+            style="width: 18.929rem;height: 3.214rem;" alt="">
         </div>
     </div>
-    <div class="row z-1 justify-content-center" style="margin-top: 5rem;">
+    <div class="row z-1 justify-content-center our-team">
         <div class="col-md-1 mx-4" style="margin-top: 1rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.3;" class="w-100" alt="">
         </div>
-        <div class="col-md-1 mx-4"  style="margin-top: 4rem;">
+        <div class="col-md-1 mx-4" style="margin-top: 4rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.5;" class="w-100" alt="">
         </div>
-        <div class="col-md-1 mx-4"  style="margin-top: 7rem;">
+        <div class="col-md-1 mx-4" style="margin-top: 7rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.7;" class="w-100" alt="">
         </div>
-        <div class="col-md-1 mx-4"  style="margin-top: 10rem;">
+        <div class="col-md-1 mx-4" style="margin-top: 10rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 1;" class="w-100" alt="">
         </div>
-        <div class="col-md-1 mx-4"  style="margin-top: 7rem;">
+        <div class="col-md-1 mx-4" style="margin-top: 7rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.7;" class="w-100" alt="">
         </div>
-        <div class="col-md-1 mx-4"  style="margin-top: 4rem;">
+        <div class="col-md-1 mx-4" style="margin-top: 4rem;">
             <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.5;" class="w-100" alt="">
         </div>
         <div class="col-md-1 mx-4" style="margin-top: 1rem;">
@@ -134,22 +139,23 @@
         </div>
     </div>
     <div class="w-50 mt-5">
-        <div class="fs-3 text-black">
+        <div class="t-color">
             OUR TEAM
         </div>
-        <div class="web-left mt-5 responsiveFont fm-rubik">
+        <div class="web-left mt-5 text-color fm-rubik">
             Our chefs, nutritionists and fitness professionals bring a wealth of experience and knowledge to every meal
             we craft. They are dedicated to ensuring that each dish not only delights the palate but also aligns with
             our customers' wellness objectives.
             Together, we are reshaping the meal delivery experience through a shared passion for excellence, creativity,
             and unwavering dedication to our customers' well-being.
         </div>
-        <div class="fw-bold my-5 responsiveFont fm-rubik">
+        <div class="fw-bold my-5 text-color fm-rubik">
             Join us as we embark on this flavourful and nourishing journey.
         </div>
         <div class="mb-5">
-            <button class="btn btn-primary mt-2 fw-bold getStartButton">Get started
-                <i class="pi pi-arrow-right text-white fs08"></i>
+            <button class="btn btn-primary mt-4 fw-bold getStartButton fm-prompt-button">
+                <span>Get started</span>
+                <i class="pi pi-arrow-right text-white arrow-icon"></i>
             </button>
         </div>
     </div>

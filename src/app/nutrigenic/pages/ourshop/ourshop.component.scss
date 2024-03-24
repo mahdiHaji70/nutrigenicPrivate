@@ -1,32 +1,67 @@
-.categoriesButton{
-    //min-width: 115px;
-    align-items: center;
-    background-color: white;
-    border: solid 1px #d7d7de;
-    border-radius: 30px;
-    color: #5D5D66;
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.categoriesButton {
+  //min-width: 115px;
+  align-items: center;
+  background-color: white;
+  border: solid 1px #d7d7de;
+  border-radius: 30px;
+  color: #5D5D66;
 }
+
 .btn-ourshop {
-    align-items: center;
-    background-color: #EF870A !important;
-    border: none;
-    border-radius: 25px;
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-dec-ourshop {
+  align-items: center;
+  background-color: white !important;
+  border: solid 1.5px #EF870A;
+  border-radius: 50px;
+  color: black !important;
+}
+
+@media screen and (min-width: 1700px) {
+  .responsiveFont {
+    font-size: 1.4rem;
   }
-  .btn-dec-ourshop {
-    align-items: center;
-    background-color: white !important;
-    border:solid 1px #EF870A;
-    border-radius: 25px;
-    color:black !important;
+}
+
+@media screen and (max-width: 1699px) {
+  .responsiveFont {
+    font-size: 1rem;
   }
-  @media screen and (min-width: 1700px) {
-    .responsiveFont {
-      font-size: 1.4rem;
-    }
+}
+
+.input-promo {
+
+}
+.mainLoginInput{
+  border-radius: 20px;
+  border: 1.5px solid #F1F1F3;
+  background-color: #F9F9FB;
+  float: right;
+  width: 25.571rem;
+  height: 3.714rem;
+}
+.mainLoginInput::-webkit-input-placeholder { 
+  font-family: FontAwesome;
+  font-weight: bold;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #5D5D66;
+font-size: 1rem;
   }
-  
-  @media screen and (max-width: 1699px) {
-    .responsiveFont {
-      font-size: 1rem;
-    }
-  }
+
+ ::ng-deep .p-rating .p-rating-icon.p-rating-icon-active {
+    color: #FFCB45;
+}
+
+::ng-deep .p-rating .p-rating-icon {
+  color: #F2F2F2;
+}

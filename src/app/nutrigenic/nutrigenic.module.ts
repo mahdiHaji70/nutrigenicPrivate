@@ -14,7 +14,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { BlogDetailComponent } from './pages/blog/blog-detail/blog-detail.component';
 import { DialogModule } from 'primeng/dialog';
 import { OurShopComponent } from './pages/ourshop/ourshop.component';
-import { OurShopDetailComponent } from './pages/ourshop/ourshopdetail/ourshop-detail.component';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,8 +28,7 @@ import { OurShopDetailComponent } from './pages/ourshop/ourshopdetail/ourshop-de
         AboutUsComponent,
         BlogComponent,
         BlogDetailComponent,
-        OurShopComponent,
-        OurShopDetailComponent
+        OurShopComponent
     ],
     imports: [
         CommonModule,
@@ -36,7 +36,9 @@ import { OurShopDetailComponent } from './pages/ourshop/ourshopdetail/ourshop-de
         MenubarModule,
         DividerModule,
         CarouselModule,
-        DialogModule
+        DialogModule,
+        RatingModule,
+        FormsModule
     ],
     exports: [],
     providers: [

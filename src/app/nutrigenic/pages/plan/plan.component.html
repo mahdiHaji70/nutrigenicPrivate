@@ -2,7 +2,7 @@
     <div class="row w-75 mt-5">
         <div class="col-md-4 mb-3 position-relative">
             <div class="z-2 position-absolute" style="margin-left: 5%;width: 25%;">
-                <button class="btn btn-primary mt-2 btn-plan p-1 w-100">To Start
+                <button class="btn btn-primary mt-2 btn-plan p-1 w-100" style="font-size: 1.143rem;">To Start
                 </button>
             </div>
             <div class="w-100 z-1" style="margin-bottom: -20%;">
@@ -16,10 +16,10 @@
                     <div>
                         <span class="cardTitle">Flexi</span>
                     </div>
-                    <div class="fw-bold fs-5"><span>Try us and get satisied</span></div>
-                    <div class="web-left mt-5"><span>Discover our flexible meal options with a no-commitment trial.
+                    <div class="fw-bold fs-5" style="font-size: 1.143rem;color: #190E01;"><span>Try us and get satisied</span></div>
+                    <div class="web-left mt-5" style="font-size: 1.071rem;color: #190E01;"><span>Discover our flexible meal options with a no-commitment trial.
                             Enjoy a handpicked selection of dishes designed to fit your lifestyle.</span></div>
-                    <div class="web-left">
+                    <div class="web-left"  style="font-size: 1.071rem;color: #190E01;">
                         <ul class="p-3">
                             <li>No commitment</li>
                             <li>Order any day of the week</li>
@@ -32,7 +32,7 @@
                         <img class="d-block object-fit-contain w-75"
                             src="../../../../assets/images/plan-bottom-line.png">
                     </div>
-                    <div><span>How many meals per day?</span></div>
+                    <div><span style="font-size: 1rem;font-weight: bold;">How many meals per day?</span></div>
                     <div class="d-flex justify-content-center">
                         <div *ngFor="let i of [2, 3, 4, 5]" class="m-1" style="width: 15%;">
                             <button class="btn btn-primary mt-2 fw-bold btn-planMeal"
@@ -41,7 +41,7 @@
                                 }}</button>
                         </div>
                     </div>
-                    <div class="mt-3"><span>How many day per week?</span></div>
+                    <div class="mt-3"><span style="font-size: 1rem;font-weight: bold;">How many day per week?</span></div>
                     <div class="d-flex justify-content-center">
                         <div *ngFor="let i of [ 3, 5, 6]" class="m-1" style="width: 15%;">
                             <button class="btn btn-primary mt-2 fw-bold btn-planMeal"
@@ -52,19 +52,20 @@
                     </div>
                 </div>
                 <div class="mt-3 p-3" style="text-align: left;">
-                    <span>Promo code</span>
+                    <span style="font-size: 0.714rem;color: #848790;">Promo code</span>
                     <div class="d-flex">
                         <input type="text" class="p-2 input-promo" placeholder="type here ..." />
                         <button class="btn mt-2 fw-bold m-auto btn-apply">Apply
                         </button>
                     </div>
                     <p-divider></p-divider>
-                    <div><span>Deliveries Per Week</span><span style="float: right;">01</span></div>
+                    <div><span style="font-size: 1rem;">Deliveries Per Week</span><span style="float: right;font-size: 1rem;">01</span></div>
                     <p-divider></p-divider>
-                    <div><i class="pi pi-angle-down mx-1 fs08"></i><span class="fw-bold">You will pay</span><span
-                            class="fw-bold" style="float: right;">£206.60</span></div>
+                    <div><i class="pi pi-angle-down mx-1 fs08"></i><span class="fw-bold" style="font-size: 1rem;">You will pay</span><span
+                            class="fw-bold" style="float: right;font-size: 1rem;">£206.60</span></div>
                     <div class="web-center mt-3">
-                        <button class="btn btn-primary mt-2 fw-bold btn-orderNow px-3 py-2 fs-5">Order now
+                        <button class="btn btn-primary mt-2 fw-bold btn-orderNow fm-prompt"
+                        style="font-size: 1.143rem;">Order now
                             <i class="pi pi-arrow-right text-white fs08"></i>
                         </button>
                     </div>
@@ -74,7 +75,7 @@
         </div>
         <div class="col-md-4 mb-3 position-relative">
             <div class="z-2 position-absolute" style="margin-left: 5%;width: 35%;">
-                <button class="btn btn-primary mt-2 btn-plan p-1 w-100">Recomended
+                <button class="btn btn-primary mt-2 btn-plan p-1 w-100" style="font-size: 1.143rem;">Recomended
                 </button>
             </div>
             <div class="w-100 z-1" style="margin-bottom: -20%;">
@@ -88,9 +89,9 @@
                     <div>
                         <span class="cardTitle">Commit</span>
                     </div>
-                    <div class="fw-bold fs-5"><span>Try us and get satisied</span></div>
-                    <div class="web-left mt-5"><span>Enjoy long-term savings and flexibility</span></div>
-                    <div class="web-left">
+                    <div class="fw-bold fs-5"  style="font-size: 1.143rem;"><span>Try us and get satisied</span></div>
+                    <div class="web-left mt-5" style="font-size: 1.071rem;color: #190E01;"><span>Enjoy long-term savings and flexibility</span></div>
+                    <div class="web-left" style="font-size: 1.071rem;color: #190E01;">
                         <ul class="p-3">
                             <li>Significant discounts on orders</li>
                             <li>Flexible payment options</li>
@@ -101,7 +102,7 @@
                         <img class="d-block object-fit-contain w-75"
                             src="../../../../assets/images/plan-bottom-line.png">
                     </div>
-                    <div><span>How many meals per day?</span></div>
+                    <div><span style="font-size: 1.071rem;color: #190E01;font-weight: bold;">How many meals per day?</span></div>
                     <div class="d-flex justify-content-center">
                         <div *ngFor="let i of [2, 3, 4, 5]" class="m-1" style="width: 15%;">
                             <button class="btn btn-primary mt-2 fw-bold btn-planMeal"
@@ -110,7 +111,7 @@
                                 }}</button>
                         </div>
                     </div>
-                    <div class="mt-3"><span>How many day per week?</span></div>
+                    <div class="mt-3 fw-bold"><span style="font-size: 1.071rem;color: #190E01;">How many day per week?</span></div>
                     <div class="d-flex justify-content-center">
                         <div *ngFor="let i of [ 3, 5, 6]" class="m-1" style="width: 15%;">
                             <button class="btn btn-primary mt-2 fw-bold btn-planMeal"
@@ -119,7 +120,7 @@
                                 }}</button>
                         </div>
                     </div>
-                    <div class="mt-3"><span>How many weeks?</span></div>
+                    <div class="mt-3"><span style="font-size: 1.071rem;color: #190E01;font-weight: bold;">How many weeks?</span></div>
                     <div class="d-flex justify-content-center">
                         <div *ngFor="let i of [ ['4w', 'Save 10%'], ['8w','Save 15%'], ['12w','Save 20%']]" class="m-1"
                             style="width: 25%;">
@@ -132,7 +133,7 @@
                     </div>
                 </div>
                 <div class="mt-3 p-3" style="text-align: left;">
-                    <span>Promo code</span>
+                    <span style="font-size: 0.714rem;color: #848790;">Promo code</span>
                     <div class="d-flex">
                         <input type="text" class="p-2 input-promo"
                             placeholder="type here ..." />
@@ -145,7 +146,8 @@
                     <div><i class="pi pi-angle-down mx-1 fs08"></i><span class="fw-bold">You will pay</span><span
                             class="fw-bold" style="float: right;">£206.60</span></div>
                     <div class="web-center mt-3">
-                        <button class="btn btn-primary mt-2 fw-bold btn-orderNow px-3 py-2 fs-5">Order now
+                        <button class="btn btn-primary mt-2 fw-bold btn-orderNow fm-prompt"
+                        style="font-size: 1.143rem;">Order now
                             <i class="pi pi-arrow-right text-white fs08"></i>
                         </button>
                     </div>
@@ -165,22 +167,22 @@
                     <div>
                         <span class="cardTitle">Custom</span>
                     </div>
-                    <div class="fw-bold fs-5"><span>Custom plan through our expert</span></div>
-                    <div class="web-left mt-5"><span>Get personalized, one-on-one guidance to create a custom meal
+                    <div class="fw-bold fs-5" style="font-size: 1.143rem;"><span>Custom plan through our expert</span></div>
+                    <div class="web-left mt-5" style="font-size: 1.071rem;color: #190E01;"><span>Get personalized, one-on-one guidance to create a custom meal
                             plan.</span></div>
-                    <div class="web-left mt-2"><span>Our experts provide step-by-step support to meet your unique
+                    <div class="web-left mt-2"><span style="font-size: 1.071rem;color: #190E01;">Our experts provide step-by-step support to meet your unique
                             wellness goals. Start your tailored health journey today!</span></div>
                     <div class="mt-5">
-                        <button class="btn btn-primary mt-2 fw-bold btn-plan p-3">Connect with an expert
+                        <button class="btn btn-primary mt-2 fw-bold btn-plan" style="font-size: 1.143rem;">Connect with an expert
                         </button>
                     </div>
                     <div class="mb-3 mt-5">
                         <img class="d-block object-fit-contain w-75"
                             src="../../../../assets/images/plan-bottom-line.png">
                     </div>
-                    <div><span>Already connected?</span></div>
+                    <div><span style="font-size: 1rem;font-weight: 400;">Already connected?</span></div>
                     <div class="mt-1">
-                        <button class="btn mt-2 fw-bold px-5 py-3 btn-apply">Select your guide
+                        <button class="btn mt-2 fw-bold px-5 py-3 btn-apply" style="font-size: 1.143rem;color: #311C02;">Select your guide
                         </button>
                     </div>
                 </div>

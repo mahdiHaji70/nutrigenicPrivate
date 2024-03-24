@@ -1,9 +1,4 @@
 @media screen and (min-width: 1700px) {
-  .responsiveFont {
-    font-size: 1.7rem;
-  }
-
-
 .coreValuesItem {
   margin-right: 3rem;
   min-width: 150px;
@@ -14,44 +9,37 @@
 }
 
 .ourFounderMargin{
-  margin-top: 72rem !important;
+  margin-top: 92rem !important;
+}
+.text-color {
+  color: #5D5D66;
+  font-size: 1.429rem;
+  font-weight: 300;
 }
 
-.getStartButton {
-  align-items: center;
-  background-color: #EF870A !important;
-  border: none;
-  border-radius: 15px;
-  padding-left: 1.8rem;
-  padding-right: 1.8rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.our-team{
+  margin-top: 5rem;
 }
+
 }
 
 @media screen and (max-width: 1699px) {
-  .responsiveFont {
-    font-size: 1rem;
-  }
 
+  .text-color {
+    color: #5D5D66;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
 
 .coreValuesItem {
   margin-right: 2rem;
   min-width: 100px;
 }
 .ourFounderMargin{
-  margin-top: 45rem !important;
+  margin-top: 65rem !important;
 }
-
-.getStartButton {
-  align-items: center;
-  background-color: #EF870A !important;
-  border: none;
-  border-radius: 15px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.our-team{
+  margin-top: 10rem;
 }
 }
 
@@ -64,6 +52,26 @@
   background-color: white;
   text-align: center;
   z-index: 2;
+}
+
+.arrow-icon {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.getStartButton {
+  align-items: center;
+  background-color: #EF870A !important;
+  border: none;
+  border-radius: 15px;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.getStartButton:hover {
+  background-color: #F8A94A !important;
 }
 
 .thirdDiv {

@@ -1,4 +1,8 @@
 @media screen and (min-width: 1120px) and (max-width: 1699px) {
+  .adaptiveImgHeight {
+    height: 350px;
+  }
+
   .textbox {
     position: absolute;
     margin-top: 100px;
@@ -7,14 +11,14 @@
     padding: 10px;
     z-index: 1;
     font-family: Prompt;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: left;
 
   }
 
   .responsiveFont {
-    font-size: 1rem;
+    font-size: 1.429rem;
   }
 
   .ourMission {
@@ -39,14 +43,25 @@
     background-color: #EF870A !important;
     border: none;
     border-radius: 15px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    font-size: 0.8rem;
   }
+
+  .arrow-icon {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
 }
 
 @media screen and (max-width: 1119px) {
+  .adaptiveImgHeight {
+    height: 350px;
+  }
+
   .textbox {
     position: absolute;
     margin-top: 100px;
@@ -55,13 +70,13 @@
     padding: 10px;
     z-index: 1;
     font-family: Prompt;
-    font-size: 1.3rem;
+    font-size: 2.286rem;
     font-weight: bold;
     text-align: left;
   }
 
   .responsiveFont {
-    font-size: 1rem;
+    font-size: 1.429rem;
   }
 
   .ourMission {
@@ -86,46 +101,47 @@
     background-color: #EF870A !important;
     border: none;
     border-radius: 15px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
-  
+  .arrow-icon {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
 }
 
 
 @media screen and (min-width: 1700px) {
-  .baseContainer {
-    position: relative;
-    display: flex;
-    max-height: 550px;
+  .adaptiveImgHeight {
+    height: 550px;
   }
 
   .responsiveFont {
-    font-size: 1.7rem;
+    font-size: 1.429rem;
   }
 
   .fs08 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 
   .textbox {
     position: absolute;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-left: 10%;
     width: 35%;
     padding: 10px;
     z-index: 1;
     font-family: Prompt;
-    font-size: 2.2rem;
+    font-size: 2.286rem;
     font-weight: bold;
     text-align: left;
   }
 
   .ourMission {
-    margin-top: 8rem;
-    font-size: 1.5rem;
+    margin-top: 5rem;
+    font-size: 1.429rem;
   }
 
 
@@ -141,28 +157,34 @@
     background-color: #EF870A !important;
     border: none;
     border-radius: 15px;
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    font-size: 1.143rem;
+    font-weight: 600;
+  }
+  .arrow-icon {
+    font-size: 1rem;
+    margin-left: 0.6rem;
   }
 }
 
-.baseContainer {
-  position: relative;
-  display: flex;
-  max-height: 350px;
+.getStartButton:hover {
+  background-color: #F8A94A !important;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
+  top: 6rem;
   left: 0;
-  width: 60%;
-  height: 100%;
-  border-top-right-radius: 20%;
-  border-bottom-right-radius: 20%;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+  width: 40%;
+  //height: 350px;
+  border: none;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) -40%, rgba(255, 255, 255, 1) 0%);
+  box-shadow: 0rem 0rem 3rem 5rem white !important;
 }
 
 .overlayMasterPlan {
@@ -179,11 +201,12 @@
 .imgMain {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   right: 0;
   float: right;
 }
+
 
 .d-flex {
   display: flex;
@@ -258,7 +281,6 @@
 }
 
 .mastrPlan button {
-  min-width: 115px;
   align-items: center;
   background-color: white;
   border: solid 1px #d7d7de;
@@ -341,4 +363,3 @@
 .shadow {
   box-shadow: 0.7rem 0.7rem 1.2rem #1111 !important;
 }
-

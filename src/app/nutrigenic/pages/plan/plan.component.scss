@@ -13,6 +13,10 @@ ul li::marker {
   background-color: #EF870A !important;
   border: none;
   border-radius: 25px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .btn-planMeal {
@@ -38,12 +42,17 @@ ul li::marker {
   background-color: #EF870A !important;
   border: none;
   border-radius: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .cardTitle {
   color: #EF870A;
-  font-weight: 1000;
-  font-size: 3rem;
+  //font-weight: 1000;
+  font-family: Rubik-Bold;
+  font-size: 2.571rem;
 }
 
 .input-promo {

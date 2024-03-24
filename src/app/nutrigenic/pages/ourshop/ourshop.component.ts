@@ -10,10 +10,11 @@ export class OurShopComponent {
     tabItems = ['Snacks', 'Health boost ingredients', 'Fine Supplements', 'Vitamins'];
     selectedMasterTab: string | null = 'Snacks';
     listCardData: any[] = [];
-    counter:number=0;
-    constructor(private router: Router) {}
+    counter: number = 0;
+    value: number = 4
+    constructor(private router: Router) { }
 
-    ngOnInit(){
+    ngOnInit() {
         this.listCardData = [
             {
                 imgUrl: '../../../../assets/images/masterImage.png',
@@ -63,12 +64,14 @@ export class OurShopComponent {
                 description: 'The best part is that green leafy vegetables',
                 price: '€206.60'
             },
-         ];
+        ];
     }
-    increaseBtnClick() {    
-        return this.counter = this.counter+1;    
-      }    
-      decreaseBtnClick() {    
-        return this.counter = this.counter==0? 0: this.counter-1;       
-      }  
+
+    increaseBtnClick() {
+        return this.counter = this.counter + 1;
+    }
+
+    decreaseBtnClick() {
+        return this.counter = this.counter == 0 ? 0 : this.counter - 1;
+    }
 }

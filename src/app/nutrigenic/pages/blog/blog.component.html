@@ -1,7 +1,7 @@
 <div class="web-center">
     <div class="position-relative">
-        <div class="position-absolute fw-bold fs-3 text-black" style="margin-left: 45%;
-        margin-top: 100px;">
+        <div class="position-absolute text-black" style="margin-left: 45%;
+        margin-top: 8%;font-size: 2.286rem;font-weight: 600;">
             On our blog
         </div>
         <div class="w-100">
@@ -34,16 +34,17 @@
                     style="border-radius: 4% 4% 0 0;" />
             </div>
             <div class="card-body">
-                <div class="fw-bold">
+                <div class="fw-bold" style="font-size: 1.286rem;">
                     {{item.title}}
                 </div>
-                <div class="web-left mt-2"><span>{{ item.description }}</span></div>
+                <div class="web-left mt-2"><span style="font-size: 1rem;font-weight: 300;color: #5D5D66;">{{ item.description }}</span></div>
                 <div class="d-flex mt-4">
                     <button [style.background-color]="'#dfdfef'"
-                        class="btn btn-primary py-1 mt-2 mx-2 categoriesButton">
+                        class="btn btn-primary py-1 mt-2 mx-2 categoriesButton"
+                        style="font-size: 0.857rem;font-weight: 300;">
                         {{item.tag}}
                     </button>
-                    <span class="fw-bold  mt-2" style="position: absolute;right: 5%;cursor: pointer;" (click)="navigateToBlogDetail()">
+                    <span class="fw-bold fm-prompt  mt-2" style="position: absolute;right: 5%;cursor: pointer;font-size: 1rem;" (click)="navigateToBlogDetail()">
                         Read more
                     </span>
                 </div>
