@@ -1,0 +1,54 @@
+.general-font {
+    font-size: 1rem;
+    font-weight: bold !important;
+    color: #0F0F1F;
+}
+
+.btn-apply {
+    border: 1.5px solid black;
+    border-radius: 25px;
+  }
+
+  .input-promo {
+    border-radius: 10px;
+    border: none;
+    background-color: #F0F4F8;
+  }
+
+  .getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;  
+    font-weight: bold;  
+  }
+  .arrow-icon {
+    font-size: 1rem;
+    margin-left: 0.6rem;
+  }
+
+.getStartButton:hover {
+  background-color: #F8A94A !important;
+}
+
+
+.menu-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+.overlayMasterPlan {
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  height: 9%;
+  opacity: 0.8;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 1) 30%);
+  box-shadow: 0rem 0rem 0.5rem 1rem white !important;
+}

@@ -38,23 +38,6 @@
     min-width: 170px;
   }
 
-  .getStartButton {
-    align-items: center;
-    background-color: #EF870A !important;
-    border: none;
-    border-radius: 15px;
-    padding-left: 1.7rem;
-    padding-right: 1.7rem;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-    font-size: 0.8rem;
-  }
-
-  .arrow-icon {
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
-  }
-
 }
 
 @media screen and (max-width: 1119px) {
@@ -96,20 +79,6 @@
     min-width: 170px;
   }
 
-  .getStartButton {
-    align-items: center;
-    background-color: #EF870A !important;
-    border: none;
-    border-radius: 15px;
-    padding-left: 1.7rem;
-    padding-right: 1.7rem;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-  }
-  .arrow-icon {
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
-  }
 }
 
 
@@ -152,27 +121,9 @@
     min-width: 210px;
   }
 
-  .getStartButton {
-    align-items: center;
-    background-color: #EF870A !important;
-    border: none;
-    border-radius: 15px;
-    padding-left: 2.8rem;
-    padding-right: 2.8rem;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
-    font-size: 1.143rem;
-    font-weight: 600;
-  }
-  .arrow-icon {
-    font-size: 1rem;
-    margin-left: 0.6rem;
-  }
+
 }
 
-.getStartButton:hover {
-  background-color: #F8A94A !important;
-}
 
 .overlay {
   position: absolute;

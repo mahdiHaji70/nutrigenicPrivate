@@ -1,15 +1,24 @@
-<div class="web-center">
+<div id="layoutHome" class="web-center">
     <div style="width: 85%;">
-        <div class="mt-4 web-left">
-            <button *ngFor="let item of tabItems"
-                [style.background-color]="selectedMasterTab === item ? '#dfdfef' : 'white'"
-                (click)="selectedMasterTab = item" class="btn btn-primary mt-2 mx-2 categoriesButton"
-                style="font-size: 1.143rem;">
-                {{ item }}
-            </button>
-            <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
-                placeholder="&#61442; Search meal or ingredient..." style="font-size: 1rem;font-weight: bold;" />
-
+        <div class="mt-4 web-left row">
+            <div class="col-md-9">
+                <button *ngFor="let item of tabItems"
+                    [style.background-color]="selectedMasterTab === item ? '#dfdfef' : 'white'"
+                    (click)="selectedMasterTab = item" class="btn btn-primary mt-2 mx-2 categoriesButton"
+                    style="font-size: 1.143rem;">
+                    {{ item }}
+                </button>
+            </div>
+            <div class="col-md-3">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search" style="font-size: 1rem;font-weight: bold;color: #5D5D66;" *ngIf="searchIcon"></i>
+                    <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
+                        placeholder="Search meal or ingredient..."
+                        style="font-size: 1rem;font-weight: bold;color: #5D5D66;" 
+                        (input)="inputTextChange($event)"
+                        [(ngModel)]="search"/>
+                </span>
+            </div>
         </div>
         <div class="w-100 row mt-4 row mb-5" style="max-width: 100%;">
             <ng-container *ngFor="let item of listCardData">
@@ -34,9 +43,8 @@
                 <div class="fw-bold mt-3" style="font-size: 1.143rem;">
                     {{item.title}}
 
-                    <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false"
-                    [style.float]="'right'"
-                    [style.font-size]="'1rem'"></p-rating>
+                    <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false" [style.float]="'right'"
+                        [style.font-size]="'1rem'"></p-rating>
 
                 </div>
                 <div class="web-left mt-2" style="font-size: 1rem;"><span>{{ item.description }}</span></div>

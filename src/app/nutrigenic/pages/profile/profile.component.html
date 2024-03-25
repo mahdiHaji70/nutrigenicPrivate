@@ -1,0 +1,28 @@
+<div class="web-center">
+    <div style="width: 85%;">
+        <div class="mt-5 mb-5 web-left d-flex">
+            <ul>
+                <li *ngFor="let item of menuItems" class="mb-2 p-2"
+                    [style.background-color]="selectedMenu === item.id ? '#0F0F1F' : '#F9F9FB'"
+                    (click)="selectedMenu = item.id" style="border-radius: 12px;width: 15.143rem;cursor: pointer;">
+                    <img alt="dropdown icon" class="menu-img" [src]="item.img"
+                        [style.filter]="selectedMenu === item.id ? 'invert(100%) sepia(100%) saturate(0%) hue-rotate(154deg)' : ''">
+                    <span class="fm-prompt menu-text"
+                        [style.color]="selectedMenu === item.id ? '#F9F9FB' : '#0F0F1F'">{{item.text}}</span>
+                </li>
+            </ul>
+            <p-divider layout="vertical"></p-divider>
+            <div style="margin-left: 3rem;min-width: 40%;width: 40%;" *ngIf="selectedMenu === 1">
+                <app-user-profile></app-user-profile>
+            </div>
+            <app-connect-card *ngIf="selectedMenu === 1"></app-connect-card>
+            <app-my-orders *ngIf="selectedMenu === 2"></app-my-orders>
+            <app-user-expert *ngIf="selectedMenu === 3"></app-user-expert>
+            <app-user-meals *ngIf="selectedMenu === 4"></app-user-meals>
+            <app-credit-cards *ngIf="selectedMenu === 5"></app-credit-cards>
+            <div style="min-width: 100%;" *ngIf="selectedMenu === 6">
+                <app-account *ngIf="selectedMenu === 6"></app-account>
+            </div>
+        </div>
+    </div>
+</div>

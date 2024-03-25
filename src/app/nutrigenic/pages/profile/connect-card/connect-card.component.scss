@@ -1,0 +1,26 @@
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-7 {
+    width: calc((100% / 7) - 15px); 
+    margin-right: 15px; 
+  }
+  
+  .col-7:last-child {
+    margin-right: 0;
+  }
+
+  .getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;  
+    font-weight: bold;  
+  }

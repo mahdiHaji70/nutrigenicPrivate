@@ -1,4 +1,5 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
 .categoriesButton {
   //min-width: 115px;
   align-items: center;
@@ -35,10 +36,9 @@
   }
 }
 
-.input-promo {
+.input-promo {}
 
-}
-.mainLoginInput{
+.mainLoginInput {
   border-radius: 20px;
   border: 1.5px solid #F1F1F3;
   background-color: #F9F9FB;
@@ -46,20 +46,17 @@
   width: 25.571rem;
   height: 3.714rem;
 }
-.mainLoginInput::-webkit-input-placeholder { 
-  font-family: FontAwesome;
-  font-weight: bold;
-  overflow: visible;
-  vertical-align: top;
-  display: inline-block !important;
-  padding-left: 5px;
-  padding-top: 2px;
-  color: #5D5D66;
-font-size: 1rem;
-  }
 
- ::ng-deep .p-rating .p-rating-icon.p-rating-icon-active {
-    color: #FFCB45;
+.mainLoginInput::-webkit-input-placeholder {
+  padding-left: 2rem;
+  padding-top: 2px;
+  margin-left: 10rem;
+  color: #5D5D66;
+  font-size: 1rem;
+}
+
+::ng-deep .p-rating .p-rating-icon.p-rating-icon-active {
+  color: #FFCB45;
 }
 
 ::ng-deep .p-rating .p-rating-icon {

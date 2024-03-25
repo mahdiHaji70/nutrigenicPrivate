@@ -1,0 +1,17 @@
+<div style="margin-left: 3rem;">
+    <div class="fw-bold fm-prompt" style="font-size: 1.429rem;color: #0F0F1F;">Submitted meals</div>
+    <div *ngFor="let item of orders" class="mt-4 fm-rubik p-4 order-font"
+        style="border: 1.5px solid #DFDFEF; border-radius: 4px;position: relative;">
+        <div class="overlay">12.02.2032 - Order #12345</div>
+        <span class="fw-bold mr3">{{item.title}}</span>
+        <span class="mr05">Status:</span>
+        <button class="btn py-0" style="border-radius: 200px; margin-right: 10rem;"
+            [style.background-color]="item.statusId === 1 ? '#FCDAB1' : item.statusId === 2 ? '#FCF0B1' : '#CEF3DF'">
+            <img *ngIf="item.statusId !== 1" [src]="item.statusId === 2 ? '../../../../../assets/images/loading.png' : '../../../../../assets/images/approved.png'"
+            style="height: 16px;width: 16px;">
+            {{item.status}}
+        </button>
+        <img src="../../../../../assets/images/details.png" style="width: 16px;height: 16px;" class="mr05" alt="">
+        <span style="color: #5D5D66;">details</span>
+    </div>
+</div>

@@ -16,7 +16,10 @@
                 <p-menubar [model]="items"></p-menubar>
             </div>
         </div>
-        <div class="user-icon" style="cursor: pointer;" (click)="loginPopupManager()">
+        <div class="user-icon" style="cursor: pointer;" (click)="goToCheckOut()">
+            <img src="../../../../../assets/images/shopping-basket.png" alt="User Icon">
+        </div>
+        <div class="user-icon" style="cursor: pointer;margin-left: 1.5rem;" (click)="loginPopupManager()">
             <img src="assets/images/user.png" alt="User Icon">
             <span>Login</span>
         </div>

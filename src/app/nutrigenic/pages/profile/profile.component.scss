@@ -1,0 +1,27 @@
+// style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(154deg);"
+ul li::marker {
+    color: #F9F9FB;
+}
+
+.menu-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+.menu-text {
+    font-style: normal !important;
+    font-size: 1.143rem;
+    color: #0F0F1F;
+}
+
+.btn-apply {
+    border: 1.5px solid black;
+    border-radius: 20px;
+    font-size: 1.143rem;
+    font-weight: bold;
+    padding-left: 1.429rem;
+    padding-right: 1.429rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }

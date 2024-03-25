@@ -12,6 +12,8 @@ export class OurShopComponent {
     listCardData: any[] = [];
     counter: number = 0;
     value: number = 4
+    search: string = '';
+    searchIcon = true;
     constructor(private router: Router) { }
 
     ngOnInit() {
@@ -65,6 +67,15 @@ export class OurShopComponent {
                 price: '€206.60'
             },
         ];
+    }
+
+    inputTextChange(event: any) {
+        var x = event;
+        if (this.search == '')
+            this.searchIcon = true;
+        else
+            this.searchIcon = false;
+
     }
 
     increaseBtnClick() {

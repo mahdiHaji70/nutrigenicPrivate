@@ -97,6 +97,13 @@ export class HeaderComponent {
                 .catch(() => { });
     }
 
+    goToCheckOut(){
+        this.router
+        .navigate(['/checkout'])
+        .then(() => { })
+        .catch(() => { });
+    }
+
     loginPopupManager() {
         this.loginPopupVisibility = !this.loginPopupVisibility;
         this.handleBlurFilter();

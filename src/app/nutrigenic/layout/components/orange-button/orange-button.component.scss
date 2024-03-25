@@ -1,0 +1,26 @@
+.getStartButton {
+    align-items: center;
+    background-color: #EF870A !important;
+    border: none;
+    border-radius: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;    
+  }
+  .arrow-icon {
+    font-size: 1rem;
+    margin-left: 0.6rem;
+  }
+  .fm-prompt-button {
+    font-family: Prompt;
+    font-size: 1.143rem;
+    font-weight: 600;
+    line-height: 1.728;
+    letter-spacing: 0.04rem;
+    text-align: center;
+  }
+
+.getStartButton:hover {
+  background-color: #F8A94A !important;
+}

@@ -1,0 +1,16 @@
+<div style="margin-left: 3rem;">
+    <div class="fw-bold fm-prompt mb-5" style="font-size: 1.429rem;color: #0F0F1F;">
+        Your credit cards
+        <button class="btn fw-bold m-auto btn-apply" style="font-size: 1.143rem;float: right;">Add credit card
+        </button>
+    </div>
+    <div *ngFor="let item of creditCards" class="mt-2 fm-rubik p-4 order-font"
+        style="border: 1.5px solid #DFDFEF; border-radius: 4px;position: relative;">
+        <img src="../../../../../assets/images/user-credit-card.png" style="height: 16px;width: 16px;" class="mr05"
+            alt="">
+        <span class="fw-bold mr3">{{item.type}}</span>
+        <span class="mr3">{{item.number}}</span>
+        <span class="mr05">Exp</span><span class="mr3">{{item.expire}}</span>
+        <span style="color: #5D5D66;">details</span>
+    </div>
+</div>

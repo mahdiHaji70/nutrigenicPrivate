@@ -1,0 +1,23 @@
+::ng-deep .p-rating .p-rating-icon.p-rating-icon-active {
+    color: #FFCB45;
+  }
+  
+  ::ng-deep .p-rating .p-rating-icon {
+    color: #F2F2F2;
+  }
+  .btn-apply {
+    border: 1.5px solid black;
+    border-radius: 25px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .overlay {
+    position: absolute;
+    top: -10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #F9F9FB;
+    font-size: 0.857rem;
+    color: #0F0F1F;
+  }

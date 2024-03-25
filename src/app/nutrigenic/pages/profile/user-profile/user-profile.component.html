@@ -1,0 +1,20 @@
+<div class="d-flex">
+    <div class="">
+        <div class="d-flex">
+            <img src="../../../../assets/images/about-us-our-team.png" style="width: 134px;height: 134px;" alt="">
+            <div style="margin-left: 2rem;margin-top: 1rem;font-size: 2rem;color: #0F0F1F;">
+                <span>Hi,</span>
+                <br />
+                <span class="fw-bold">John Lane</span>
+            </div>
+        </div>
+        <div class="mt-4">
+            Add those information to help your Expert to track your progress and propose the best solution for you
+        </div>
+        <div class="mt-4">
+            <button *ngFor="let item of addButtons" class="btn mt-2 fw-bold btn-apply"
+                style="font-size: 1.143rem;color: #311C02;">{{item.text}}
+            </button>
+        </div>
+    </div>
+</div>

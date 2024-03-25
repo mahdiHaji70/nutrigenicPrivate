@@ -1,0 +1,13 @@
+<div style="margin-left: 3rem;">
+    <div class="fw-bold fm-prompt" style="font-size: 1.429rem;color: #0F0F1F;">Order history</div>
+    <div *ngFor="let item of orders" class="mt-4 fm-rubik p-4 order-font" style="border: 1.5px solid #DFDFEF; border-radius: 4px;position: relative;">
+        <div class="overlay">12.02.2032 - Order #12345</div>
+        <span class="fw-bold mr3">{{item.title}}</span>
+        <span class="mr05">Week</span><span class="fw-bold mr3">{{item.weeks}}</span>
+        <span class="mr05">Days</span><span class="fw-bold mr3">{{item.days}}</span>
+        <span class="mr05">Meals per day</span><span class="fw-bold mr3">{{item.meals}}</span>
+        <span class="mr05">Total</span><span class="fw-bold mr3">{{item.total}}</span>
+        <img src="../../../../../assets/images/details.png" style="width: 16px;height: 16px;" class="mr05" alt="">
+        <span style="color: #5D5D66;">details</span>
+    </div>
+</div>
