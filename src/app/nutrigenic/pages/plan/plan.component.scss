@@ -65,3 +65,7 @@ ul li::marker {
   border: 2px solid black;
   border-radius: 25px;
 }
+
+.shadow {
+  box-shadow: 0.1rem 0.3rem  1rem rgba(169, 169, 198, 0.2)  !important;
+}

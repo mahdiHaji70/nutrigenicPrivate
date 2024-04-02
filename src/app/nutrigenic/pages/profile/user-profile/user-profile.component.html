@@ -1,20 +1,97 @@
-<div class="d-flex">
+<div class="d-flex" style="margin-left: 3rem">
     <div class="">
         <div class="d-flex">
             <img src="../../../../assets/images/about-us-our-team.png" style="width: 134px;height: 134px;" alt="">
             <div style="margin-left: 2rem;margin-top: 1rem;font-size: 2rem;color: #0F0F1F;">
                 <span>Hi,</span>
                 <br />
-                <span class="fw-bold">John Lane</span>
+                <span class="fw-bold">{{userProfile.first_name + ' ' + userProfile.last_name}}</span>
             </div>
         </div>
-        <div class="mt-4">
-            Add those information to help your Expert to track your progress and propose the best solution for you
+        <div *ngIf="userProfile.weight === 0 && userProfile.photo_path === ''">
+            <div class="mt-4">
+                Add those information to help your Expert to track your progress and propose the best solution for you
+            </div>
+            <div class="mt-4">
+                <button *ngFor="let item of addButtons" class="btn mt-2 fw-bold btn-apply"
+                    style="font-size: 1.143rem;color: #311C02;" (click)="showBiometricPopup()">{{item.text}}
+                </button>
+            </div>
         </div>
-        <div class="mt-4">
-            <button *ngFor="let item of addButtons" class="btn mt-2 fw-bold btn-apply"
-                style="font-size: 1.143rem;color: #311C02;">{{item.text}}
-            </button>
+        <div *ngIf="userProfile.weight > 0 || userProfile.photo_path !== ''">
+            <div class="mt-5">
+                <button *ngFor="let item of tabItems"
+                    [style.background-color]="selectedTab === item ? '#dfdfef' : 'white'" (click)="selectedTab = item"
+                    class="btn btn-primary mt-2 mx-2 categoriesButton">
+                    {{ item }}
+                </button>
+                <button class="btn mt-2 fw-bold btn-apply" style="font-size: 1.143rem;color: #311C02;float: right;"
+                    (click)="showBiometricPopup()">Add today weight
+                </button>
+            </div>
+            <div class="w-100 mt-4" style="height: 22rem;background-color: #D9D9D9;border-radius: 20px;"
+                *ngIf="selectedTab === 'Weight' || selectedTab === 'BMI'">
+            </div>
+            <div class="w-100 mt-4 d-flex" style="display: flex; flex-direction: row; overflow-x: auto;"
+                *ngIf="selectedTab === 'Pictures' || selectedTab === 'Blood test'">
+                <div class="web-center mx-1" (dragover)="onDragOver($event)" (drop)="onDrop($event)"
+                    style="width: 13.714rem;height: 18.357rem;border-radius: 20px;border: 1.5px #848790 dashed;">
+                    <div class="mt-5">
+                        <img src="../../../../../assets/images/image-upload.png" style="width: 48px;height: 48px;"
+                            alt=""  *ngIf="selectedTab === 'Pictures'">
+                        <img src="../../../../../assets/images/file-upload.png" style="width: 48px;height: 48px;"
+                            alt=""  *ngIf="selectedTab === 'Blood test'">
+                    </div>
+                    <div class="fm-rubik mt-3" style="font-size: 1rem;color: #0F0F1F;">Drag and drop</div>
+                    <div class="d-flex align-items-center" style="width: 70%;">
+                        <p-divider class="flex-grow-1"></p-divider>
+                        <span class="px-3 fm-rubik"
+                            style="color: #B4B4BB; font-size: 0.7rem;font-weight: bold;">or</span>
+                        <p-divider class="flex-grow-1"></p-divider>
+                    </div>
+                    <div>
+                        <input #fileInput type="file" style="display: none;" (change)="onFileSelected($event)">
+                        <button class="btn mt-2 fw-bold btn-apply" (click)="fileInput.click()"
+                            style="font-size: 1.143rem;color: #311C02;margin-right: 0px;">Upload
+                        </button>
+                    </div>
+                </div>
+                <div class="web-center mx-1"
+                    style="width: 13.714rem;height: 18.357rem;border-radius: 20px;border: 1.5px #848790 dashed;">
+                </div>
+            </div>
+            <div class="fm-rubik mt-3" style="color: #5D5D66;font-size: 1rem;">
+                Add those information to help your Expert to track your progress and propose the best solution for you
+            </div>
         </div>
     </div>
+    <app-connect-card></app-connect-card>
 </div>
+
+<p-dialog [(visible)]="addBiometricPopupVisibility" [style]="{ width: '22.857rem', height: '19.714rem' }"
+    (onHide)="onDialogHide()">
+    <div class="web-center">
+        <div class="fw-bold" style="font-size: 1.429rem;color: #0F0F1F;">Add your today weight</div>
+        <div class="mt-4 row justify-content-center" style="align-items: center;">
+            <div class="col-md-3">
+                <img src="../../../../../assets/images/weight-scale.png" style="height: 48px;width: 48px;" alt="">
+            </div>
+            <div class="col-md-5 web-left p-0">
+                <span class="input-title">Weight</span>
+                <div class="">
+                    <input type="text" [(ngModel)]="value" class="p-2 fw-bold input-promo fm-rubik w-100"
+                        style="font-size: 2.286rem;color: #5D5D66;" pattern="\d{2}\.\d{2}" />
+                </div>
+            </div>
+            <div class="col-md-2 mt-3" style="font-size: 1.714rem;color: #5D5D66;">
+                Kgs
+            </div>
+        </div>
+        <div class="mt-4 p-2" style="text-align: center;">
+            <button class="btn w-100 fm-prompt fw-bold"
+                style="color: white;background-color: #EF870A;font-size: 1.143rem;border-radius: 12px;padding-top: 0.5rem;padding-bottom: 0.5rem;"
+                (click)="addUserWeight()">
+                Save</button>
+        </div>
+    </div>
+</p-dialog>

@@ -50,5 +50,8 @@
   opacity: 0.8;
   pointer-events: none;
   background: linear-gradient(to top, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 1) 30%);
-  box-shadow: 0rem 0rem 0.5rem 1rem white !important;
+}
+
+.shadow {
+  box-shadow: 0px 10px 30px 0px #6363B11A  !important;
 }

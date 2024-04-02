@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="col-md-3">
-                <span class="p-input-icon-left">
+                <span class="p-input-icon-left w-100">
                     <i class="pi pi-search" style="font-size: 1rem;font-weight: bold;color: #5D5D66;" *ngIf="searchIcon"></i>
                     <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
                         placeholder="Search meal or ingredient..."
@@ -35,9 +35,9 @@
 
 <ng-template #listCards let-item>
     <div class="col-md-3 mb-3 position-relative responsiveFont fm-rubik">
-        <div class="card p-3">
+        <div class="card shadow p-3">
             <div class="">
-                <img class="w-100" [src]="item.imgUrl" style="border-radius: 4% 4% 0 0;" />
+                <img class="w-100" [src]="item.imgUrl" style="border-radius: 12px 12px 0 0;" />
             </div>
             <div class="card-body web-left p-0">
                 <div class="fw-bold mt-3" style="font-size: 1.143rem;">

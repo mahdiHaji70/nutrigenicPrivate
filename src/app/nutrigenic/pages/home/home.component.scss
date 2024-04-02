@@ -1,13 +1,23 @@
-@media screen and (min-width: 1120px) and (max-width: 1699px) {
+@media screen and (min-width: 980px) and (max-width: 1699px) {
   .adaptiveImgHeight {
     height: 350px;
   }
+
+  .imgMain {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    float: right;
+  }
+  
 
   .textbox {
     position: absolute;
     margin-top: 100px;
     margin-left: 10%;
-    width: 35%;
+    width: 45%;
     padding: 10px;
     z-index: 1;
     font-family: Prompt;
@@ -22,8 +32,11 @@
   }
 
   .ourMission {
-    margin-top: 3rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .negativeMarginOurMission {
+    margin-top: -5%;
   }
 
   .fs08 {
@@ -38,47 +51,85 @@
     min-width: 170px;
   }
 
-}
-
-@media screen and (max-width: 1119px) {
-  .adaptiveImgHeight {
-    height: 350px;
+  .masterPlanCard {
+    min-width: 45% !important;
+    max-width: 45% !important;
   }
 
-  .textbox {
+  .secondDiv {
+    padding: 20px;
     position: absolute;
-    margin-top: 100px;
-    margin-left: 10%;
+    width: 100%;
+    margin-top: -3%;
+    border-radius: 15%;
+    background-color: white;
+    text-align: center;
+  }
+
+  .rightDish {
+    width: 90%;
+    min-width: 90%;
+    right: 0px;
+    height: auto;
+    display: block;
+    margin-top: 55%;
+  }
+  
+
+  .leftDish {
+    width: 90%;
+    min-width: 90%;
+    height: auto;
+    display: block;
+  }
+
+  .leftDish img {
     width: 35%;
-    padding: 10px;
-    z-index: 1;
-    font-family: Prompt;
-    font-size: 2.286rem;
-    font-weight: bold;
-    text-align: left;
+    height: auto;
   }
 
-  .responsiveFont {
-    font-size: 1.429rem;
-  }
-
-  .ourMission {
-    margin-top: 0;
-    font-size: 1rem;
-  }
-
-
-  .fs08 {
-    font-size: 0.8rem;
-  }
-
-  .user-icon {
-    display: flex;
+  .partner-icon {
     align-items: center;
-    margin-right: 30px;
-    min-width: 170px;
   }
 
+  .partner-icon img {
+    width: 70px;
+    height: 40px;
+    margin-right: 0px;
+    object-fit: contain;
+  }
+
+  .mastrPlan {
+    width: 100%;
+    min-height: 320px;
+    border-radius: 15%;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    text-align: -webkit-center;
+  }
+
+  .mastrPlan button {
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 15px;
+    color: #5D5D66;
+  }
+
+  .overlayMasterPlan {
+    position: absolute;
+    bottom: 8%;
+    width: 90%;
+    height: 77%;
+    opacity: 0.8;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 90%);
+  }
+
+  .who-made-us-margin{
+    margin-top: 450px;
+  }
 }
 
 
@@ -86,6 +137,16 @@
   .adaptiveImgHeight {
     height: 550px;
   }
+
+  .imgMain {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    float: right;
+  }
+  
 
   .responsiveFont {
     font-size: 1.429rem;
@@ -109,8 +170,11 @@
   }
 
   .ourMission {
-    margin-top: 5rem;
     font-size: 1.429rem;
+  }
+
+  .negativeMarginOurMission {
+    margin-top: -10%;
   }
 
 
@@ -121,7 +185,76 @@
     min-width: 210px;
   }
 
+  .masterPlanCard {
+    min-width: 45% !important;
+    max-width: 45% !important;
+  }
 
+  .secondDiv {
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    margin-top: -5%;
+    border-radius: 15%;
+    background-color: white;
+    text-align: center;
+  }
+
+
+  .leftDish {
+    width: 90%;
+    min-width: 90%;
+    height: auto;
+    display: block;
+  }
+
+  .leftDish img {
+    width: 35%;
+    height: auto;
+  }
+
+  .partner-icon {
+    align-items: center;
+  }
+
+  .partner-icon img {
+    width: 70px;
+    height: 40px;
+    margin-right: 0px;
+    object-fit: contain;
+  }
+
+  .mastrPlan {
+    width: 100%;
+    min-height: 320px;
+    border-radius: 15%;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    text-align: -webkit-center;
+  }
+
+  .mastrPlan button {
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 15px;
+    color: #5D5D66;
+  }
+
+  .overlayMasterPlan {
+    position: absolute;
+    bottom: 8%;
+    width: 90%;
+    height: 77%;
+    opacity: 0.8;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 90%);
+  }
+
+  .who-made-us-margin{
+    margin-top: 400px;
+  }
 }
 
 
@@ -138,42 +271,9 @@
   box-shadow: 0rem 0rem 3rem 5rem white !important;
 }
 
-.overlayMasterPlan {
-  position: absolute;
-  //top: 0;
-  //left: 0;
-  width: 90%;
-  height: 77%;
-  opacity: 0.8;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 90%);
-}
-
-.imgMain {
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  float: right;
-}
-
-
 .d-flex {
   display: flex;
   align-items: center;
-}
-
-.leftDish {
-  width: 90%;
-  min-width: 90%;
-  height: auto;
-  display: block;
-}
-
-.leftDish img {
-  width: 35%;
-  height: auto;
 }
 
 .rightDish {
@@ -191,52 +291,12 @@
   margin-right: 10rem;
 }
 
-.secondDiv {
-  padding: 20px;
-  position: absolute;
-  width: 100%;
-  margin-top: -5%;
-  border-radius: 15%;
-  background-color: white;
-  text-align: center;
-  //z-index: 2;
-}
-
 
 .user-icon img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   margin-right: 0px;
-}
-
-.partner-icon {
-  align-items: center;
-}
-
-.partner-icon img {
-  width: 50px;
-  height: 50px;
-  margin-right: 0px;
-  object-fit: contain;
-}
-
-.mastrPlan {
-  width: 100%;
-  min-height: 320px;
-  border-radius: 15%;
-  background-color: white;
-  text-align: center;
-  position: relative;
-  text-align: -webkit-center;
-}
-
-.mastrPlan button {
-  align-items: center;
-  background-color: white;
-  border: solid 1px #d7d7de;
-  border-radius: 15px;
-  color: #5D5D66;
 }
 
 .templateStyles {
@@ -266,6 +326,7 @@
   text-align: center;
   position: relative;
   text-align: -webkit-center;
+  box-shadow: 0px -10px 10px -10px #A9A9C6;
 }
 
 .helpButton {
@@ -274,7 +335,11 @@
   border: none;
   border-radius: 10px;
   padding: 0.5rem;
-  box-shadow: 0rem 0.7rem 1.2rem #edba7b !important;
+  box-shadow: 0px 20px 30px 0px #EF870A40 !important;
+}
+
+.helpButton:hover {
+  background-color: #F8A94A !important;
 }
 
 .horizontal-menu {
@@ -287,11 +352,6 @@
   max-width: 18px;
   min-height: 18px;
   margin: auto;
-}
-
-.masterPlanCard {
-  min-width: 45% !important;
-  max-width: 45% !important;
 }
 
 .masterPlanImg {
@@ -311,6 +371,20 @@
   color: white;
 }
 
+::ng-deep .p-carousel-indicators {
+  display: none !important;
+}
+
+
+
 .shadow {
-  box-shadow: 0.7rem 0.7rem 1.2rem #1111 !important;
+  box-shadow: 0 0 80px 0 rgba(169, 169, 198, 0.3);
+}
+
+.black-shadow {
+  box-shadow: 0 -20px 20px 0 rgba(0, 0, 0, 0.03);
+}
+
+.master-plan-item-shadow {
+  box-shadow: 0px 10px 30px 0px #6363B11A !important;
 }

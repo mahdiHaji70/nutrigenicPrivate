@@ -9,7 +9,7 @@
 }
 
 .ourFounderMargin{
-  margin-top: 92rem !important;
+  margin-top: 74rem !important;
 }
 .text-color {
   color: #5D5D66;
@@ -19,28 +19,6 @@
 
 .our-team{
   margin-top: 5rem;
-}
-
-}
-
-@media screen and (max-width: 1699px) {
-
-  .text-color {
-    color: #5D5D66;
-    font-size: 1.1rem;
-    font-weight: 300;
-  }
-
-.coreValuesItem {
-  margin-right: 2rem;
-  min-width: 100px;
-}
-.ourFounderMargin{
-  margin-top: 65rem !important;
-}
-.our-team{
-  margin-top: 10rem;
-}
 }
 
 .secondDiv {
@@ -63,4 +41,54 @@
   background-color: white;
   text-align: center;
   z-index: 2;
+}
+}
+
+@media screen and (min-width: 980px) and (max-width: 1699px)  {
+
+  .text-color {
+    color: #5D5D66;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+.coreValuesItem {
+  margin-right: 2rem;
+  min-width: 100px;
+}
+.ourFounderMargin{
+  margin-top: 47rem !important;
+}
+.our-team{
+  margin-top: 10rem;
+}
+
+.secondDiv {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  margin-top: -9%;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.thirdDiv {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  margin-top: -15%;
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  z-index: 2;
+}
+}
+
+
+
+
+.shadow {
+  box-shadow: 0 0 80px 0 rgba(169, 169, 198, 0.3);
 }

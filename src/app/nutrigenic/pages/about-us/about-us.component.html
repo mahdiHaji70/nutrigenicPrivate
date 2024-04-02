@@ -1,4 +1,6 @@
-<div id="layoutHome"  class="web-center">
+<!-- Desktop -->
+
+<div id="layoutHome" class="web-center" *ngIf="isDesktop">
     <div class="w-75 mt-5">
         <div class="row">
             <div class="col-md-8 web-left">
@@ -52,20 +54,22 @@
             <img src="../../../../assets/images/about-us-cakes.png" class="w-50" alt="">
         </div>
     </div>
-    <div class="secondDiv">
+    <div class="secondDiv shadow">
         <p class="mt-4 t-color">CORE VALUES</p>
         <div class="web-center mt-5">
-            <div *ngFor="let item of coreValues" class="d-flex mt-3 web-left coreValuesmargin fm-rubik text-color"
+            <div *ngFor="let item of coreValues" class="row web-left coreValuesmargin fm-rubik text-color"
                 style="width: 65%;opacity: 1;cursor: pointer;" (mouseover)="hoveredCoreValue = item.title"
                 (mouseout)="hoveredCoreValue = null"
                 [style.opacity]="hoveredCoreValue === item.title ? '1' : (hoveredCoreValue === null ? '1' : '0.3')">
-                <img [src]="item.imgUrl" style="width: 110px;height: 110px;" alt="">
-                <div class="responsiveFont coreValuesItem">
-                    <span>{{item.title}}</span>
-                    <br />
-                    <span>{{item.subTitle}}</span>
+                <div class="col-md-3 d-flex">
+                    <img [src]="item.imgUrl" style="width: 80px;height: 80px;" alt="">
+                    <div class="responsiveFont coreValuesItem">
+                        <span>{{item.title}}</span>
+                        <br />
+                        <span>{{item.subTitle}}</span>
+                    </div>
                 </div>
-                <div class="web-left responsiveFont">{{item.description}}</div>
+                <div class="col-md-9 web-left responsiveFont">{{item.description}}</div>
             </div>
             <div class="mt-2 mb-2">
                 <app-orange-button></app-orange-button>
@@ -93,7 +97,7 @@
             <img src="../../../../assets/images/about-us-replace.png" class="w-100" />
         </div>
     </div>
-    <div class="thirdDiv" style="z-index: 0;">
+    <div class="thirdDiv shadow" style="z-index: 0;">
         <div class="d-flex w-50">
             <div class="mt-5" style="width: 80px;height: 80px;margin-left: 5rem;margin-right: 2rem;"><img
                     src="../../../../assets/images/about-us-quote.png" class="w-100" /></div>
@@ -106,8 +110,7 @@
             </div>
         </div>
         <div class="my-5 mt-5 web-left" style="margin-left: 7rem;">
-            <img src="../../../../assets/images/Taoufik-Hannachi.png" 
-            style="width: 18.929rem;height: 3.214rem;" alt="">
+            <img src="../../../../assets/images/Taoufik-Hannachi.png" style="width: 18.929rem;height: 3.214rem;" alt="">
         </div>
     </div>
     <div class="row z-1 justify-content-center our-team">
@@ -134,6 +137,161 @@
         </div>
     </div>
     <div class="w-50 mt-5">
+        <div class="t-color">
+            OUR TEAM
+        </div>
+        <div class="web-left mt-5 text-color fm-rubik">
+            Our chefs, nutritionists and fitness professionals bring a wealth of experience and knowledge to every meal
+            we craft. They are dedicated to ensuring that each dish not only delights the palate but also aligns with
+            our customers' wellness objectives.
+            Together, we are reshaping the meal delivery experience through a shared passion for excellence, creativity,
+            and unwavering dedication to our customers' well-being.
+        </div>
+        <div class="fw-bold my-5 text-color fm-rubik">
+            Join us as we embark on this flavourful and nourishing journey.
+        </div>
+        <div class="mb-5">
+            <app-orange-button></app-orange-button>
+        </div>
+    </div>
+</div>
+
+<!-- Tablet And Mobile -->
+
+<div id="layoutHome" class="web-center" *ngIf="isTablet || isMobile">
+    <div style="margin-top: 6rem;" class="position-absolute top-0 end-0" *ngIf="isTablet">
+        <img src="../../../../assets/images/about-us-dish-tablet.png" style="width: 12.571rem;height: 12.929rem;"
+            alt="">
+    </div>
+    <div class="mt-5 px-5 position-relative">
+        <div class="web-left">
+            <div class="">
+                <div class="t-color">ABOUT US</div>
+                <div class="fm-rubik mt-3 text-color">
+                    At NutriGenic, we are committed to transforming the meal delivery experience with a focus on
+                    <span class="fw-bold">excellence</span> and <span class="fw-bold">innovation</span>. Our mission
+                    is to provide a culinary journey <span class="fw-bold">unlike any other</span>,
+                    offering exquisitely crafted, <span class="fw-bold">premium quality meals</span> developed by
+                    renowned executive chefs in the
+                    culinary world. Every dish is a testament to our dedication to <span class="fw-bold">exceptional
+                        taste</span> and utmost
+                    nutritional care. We <span class="fw-bold">meticulously</span> craft each meal to meet specific
+                    dietary and fitness needs,
+                    harnessing the power of advanced analytics and the expertise of qualified nutritionists and
+                    fitness professionals to support our customers' wellness goals. With a focus on
+                    <span class="fw-bold">culinary artistry</span>
+                    and <span class="fw-bold">nutritional precision</span>, we are reshaping the way people
+                    experience and enjoy
+                    convenient, high-quality dining, one meal at a time.
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isMobile">
+            <img src="../../../../assets/images/about-us-dish-top1.png" class="w-100" alt="">
+        </div>
+    </div>
+    <div class="position-relative" [class]="isTablet ? 'mt-5' : ''">
+        <div class="p-5" [class]="isTablet ? 'web-right' : 'web-left'">
+            <div class="fm-rubik text-color" style="width: 85%;">
+                We are an elite team of food, nutrition and fitness experts, driven by a firm commitment to
+                sustainability in every aspect of our operations. Our dedicated focus on sustainability encompasses
+                every step, from responsibly sourcing environmentally friendly materials to reducing waste and
+                minimizing our carbon footprint. We integrate these sustainable practices as fundamental elements of
+                our
+                business model, striving to protect natural resources and lessen our impact on the planet. Moreover,
+                this dedication extends to our partnerships and suppliers, collaboratively promoting environmentally
+                conscious practices across our entire supply chain.
+            </div>
+        </div>
+        <div class="position-relative" [class]="isTablet ? 'd-flex' : 'web-center'">
+            <div style="margin-top: -70px;" *ngIf="isTablet">
+                <img src="../../../../assets/images/about-us-spicy.png" class="w-100" alt="">
+            </div>
+            <div class="px-3 mt-2" [class]="isTablet ? 'position-absolute end-0 d-flex' : ''">
+                <app-orange-button></app-orange-button>
+            </div>
+        </div>
+        <div class="secondDiv shadow">
+            <p class="mt-4 t-color">CORE VALUES</p>
+            <div class="web-center mt-5">
+                <div *ngFor="let item of coreValues" class="web-left coreValuesmargin fm-rubik text-color"
+                    style="opacity: 1;cursor: pointer;" (mouseover)="hoveredCoreValue = item.title"
+                    (mouseout)="hoveredCoreValue = null"
+                    [style.opacity]="hoveredCoreValue === item.title ? '1' : (hoveredCoreValue === null ? '1' : '0.3')">
+                    <div class="d-flex justify-content-center">
+                        <img [src]="item.imgUrl" style="width: 80px;height: 80px;" alt="">
+                        <div class="responsiveFont coreValuesItem">
+                            <span>{{item.title}}</span>
+                            <br />
+                            <span>{{item.subTitle}}</span>
+                        </div>
+                    </div>
+                    <div class="web-left responsiveFont">{{item.description}}</div>
+                </div>
+                <div class="mt-2 mb-2">
+                    <app-orange-button></app-orange-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5" style="z-index: 3;" *ngIf="isMobile">
+        <img src="../../../../assets/images/Replace-mobile.png" style="width: 50%;height: 50%;" />
+    </div>
+    <div class="p-5 d-flex ourFounderMargin">
+        <div class="col-md-8 web-left">
+            <div class="t-color" [class]="isMobile ? 'web-center' : ''">OUR FOUNDER</div>
+            <div class="mt-3 fm-rubik text-color">Our culinary journey began with the vision of our
+                passionate founder,
+                Taoufik Hannachi, an accomplished professional chef with 18 years of
+                experience in the culinary world. His culinary expertise and dedication to
+                crafting exceptional meals form the cornerstone of our mission. Inspired by
+                a commitment to excellence and a love for creating memorable dining
+                experiences, Taoufik leads our team of food and fitness professionals. His
+                innovative spirit and unwavering dedication to customer satisfaction have
+                propelled us to redefine the meal delivery experience.
+            </div>
+        </div>
+        <div class="col-md-4 mt-5" style="z-index: 3;" *ngIf="isTablet">
+            <img src="../../../../assets/images/about-us-replace.png" class="w-100" />
+        </div>
+    </div>
+    <div class="thirdDiv shadow" style="z-index: 0;    text-align: -webkit-center;">
+        <div class="w-75 position-relative" [class]="isTablet ? 'd-flex' : ''">
+            <div class="mt-5 quote-left"><img
+                    src="../../../../assets/images/about-us-quote.png" /></div>
+            <div class="web-left fm-rubik text-color" [class]="isTablet ? 'mt-5' : ''" style="font-style: italic;">
+                From a young age, my interest lay in the joy of life, food, the ultimate happiness. My mother, the
+                inspiring artwork, indulged my curiosity from a tender age and nurtured this inquisitiveness into a
+                hunger. The rules I learned at my mother’s stove laid the unwavering foundation for my desire to be
+                involved in food throughout my life.
+                Food is my passion. Food is what resonates most deeply with me, with my core, with my sense of self.
+            </div>
+            <div class="quote-right"><img
+                src="../../../../assets/images/about-us-quote-1.png" /></div>
+        </div>
+        <div class="my-5 mt-5 web-left" [style]="isTablet ? 'margin-left: 5rem;' : 'width: 75%;'">
+            <img src="../../../../assets/images/Taoufik-Hannachi.png" style="width: 18.929rem;height: 3.214rem;" alt="">
+        </div>
+    </div>
+    <div class="d-flex z-1 justify-content-center our-team">       
+        <div class="col-md-1 mx-4">
+            <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.5;" class="w-100" alt="">
+        </div>
+        <div class="col-md-1 mx-4">
+            <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.7;" class="w-100" alt="">
+        </div>
+        <div class="col-md-1 mx-4">
+            <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 1;" class="w-100" alt="">
+        </div>
+        <div class="col-md-1 mx-4">
+            <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.7;" class="w-100" alt="">
+        </div>
+        <div class="col-md-1 mx-4">
+            <img src="../../../../assets/images/about-us-our-team.png" style="opacity: 0.5;" class="w-100" alt="">
+        </div>
+    </div>
+    <div class="p-5 mt-5">
         <div class="t-color">
             OUR TEAM
         </div>

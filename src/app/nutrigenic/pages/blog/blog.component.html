@@ -1,11 +1,10 @@
 <div id="layoutHome" class="web-center">
     <div class="position-relative">
-        <div class="position-absolute text-black" style="margin-left: 45%;
-        margin-top: 8%;font-size: 2.286rem;font-weight: 600;">
+        <div class="blogText blogFont text-black">
             On our blog
         </div>
         <div class="w-100">
-            <img class="w-100" src="../../../../assets/images/blog-top.png" />
+            <img class="w-100" src="../../../../assets/images/blog-top.png" style="display: block;height: auto;" />
         </div>
     </div>
     <div class="mt-5">
@@ -15,7 +14,7 @@
             {{ item }}
         </button>
     </div>
-    <div class="w-75 d-flex mt-5 row mb-5" style="max-width: 75%;">
+    <div class="mt-5 row mb-5" style="max-width: 90%;">
         <ng-container *ngFor="let item of listCardData">
             <ng-container *ngTemplateOutlet="
         listCards;
@@ -27,11 +26,11 @@
 </div>
 
 <ng-template #listCards let-item>
-    <div class="col-md-4 mb-3 position-relative responsiveFont fm-rubik">
-        <div class="card w-100 p-0 z-2">
+    <div class="mb-3 position-relative responsiveFont fm-rubik" [class]="isDesktop ? 'col-md-4' : isTablet ? 'col-md-6' : 'col-md-12'">
+        <div class="card shadow w-100 p-0 z-2" style="border-radius: 24px;">
             <div class="w-100 z-1">
                 <img class="w-100" [src]="item.imgUrl"
-                    style="border-radius: 4% 4% 0 0;" />
+                    style="border-radius: 24px 24px 0 0;" />
             </div>
             <div class="card-body">
                 <div class="fw-bold" style="font-size: 1.286rem;">

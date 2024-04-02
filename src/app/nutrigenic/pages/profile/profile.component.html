@@ -1,7 +1,7 @@
-<div class="web-center">
+<div id="layoutHome" class="web-center">
     <div style="width: 85%;">
         <div class="mt-5 mb-5 web-left d-flex">
-            <ul>
+            <ul style="padding-left: 0px;padding-right: 1rem;">
                 <li *ngFor="let item of menuItems" class="mb-2 p-2"
                     [style.background-color]="selectedMenu === item.id ? '#0F0F1F' : '#F9F9FB'"
                     (click)="selectedMenu = item.id" style="border-radius: 12px;width: 15.143rem;cursor: pointer;">
@@ -12,10 +12,8 @@
                 </li>
             </ul>
             <p-divider layout="vertical"></p-divider>
-            <div style="margin-left: 3rem;min-width: 40%;width: 40%;" *ngIf="selectedMenu === 1">
-                <app-user-profile></app-user-profile>
-            </div>
-            <app-connect-card *ngIf="selectedMenu === 1"></app-connect-card>
+            <app-user-profile *ngIf="selectedMenu === 1"></app-user-profile>
+            <!-- <app-connect-card *ngIf="selectedMenu === 7"></app-connect-card> -->
             <app-my-orders *ngIf="selectedMenu === 2"></app-my-orders>
             <app-user-expert *ngIf="selectedMenu === 3"></app-user-expert>
             <app-user-meals *ngIf="selectedMenu === 4"></app-user-meals>

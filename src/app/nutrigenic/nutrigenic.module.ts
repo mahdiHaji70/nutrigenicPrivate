@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { NutrigenicRoutingModule } from './nutrigenic-routing.module';
 import { NutrigenicComponent } from './nutrigenic.component';
 import { HeaderComponent } from './layout/components/header/header.component';
-import {MenubarModule} from 'primeng/menubar';
+import { MenubarModule } from 'primeng/menubar';
 import { HomeComponent } from './pages/home/home.component';
 import { DividerModule } from 'primeng/divider';
-import {CarouselModule} from 'primeng/carousel';
+import { CarouselModule } from 'primeng/carousel';
 import { PlanComponent } from './pages/plan/plan.component';
 import { FooterComponent } from './layout/components/footer/footer.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
@@ -28,6 +28,13 @@ import { UserExpertComponent } from './pages/profile/user-expert/user-expert.com
 import { UserMealsComponent } from './pages/profile/user-meals/user-meals.component';
 import { CreditCardsComponent } from './pages/profile/credit-cards/credit-cards.component';
 import { AccountComponent } from './pages/profile/account/account.component';
+import { AuthService } from './services/auth/auth.service';
+import { JwtTokenService } from './services/auth/jwt-token.service';
+import { ApiServiceCall } from './services/global.apiServicecall';
+import { PasswordModule } from 'primeng/password';
+import { GoogleLoginProvider, GoogleSigninButtonDirective, GoogleSigninButtonModule,SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { UserProfileService } from './services/profile/user-profile.service';
+import { ResizeDetectionService } from './services/resize-detection.service';
 
 @NgModule({
     declarations: [
@@ -60,11 +67,37 @@ import { AccountComponent } from './pages/profile/account/account.component';
         RatingModule,
         FormsModule,
         OrangeButtonComponent,
-        DropdownModule
+        DropdownModule,
+        PasswordModule,
+        GoogleSigninButtonModule,
+        ScrollPanelModule
     ],
-    exports: [],
+    exports: [GoogleSigninButtonDirective],
     providers: [
-
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider(
+                            '1083792866672-i9ss790f42nf1kb4on2e1j2lh9hf31kc.apps.googleusercontent.com', {
+                                scopes: 'profile email'
+                              }
+                        )
+                    }
+                ],
+                onError: (err) => {
+                    console.error(err);
+                }
+            } as SocialAuthServiceConfig,
+        },
+        ApiServiceCall,
+        AuthService,
+        JwtTokenService,
+        UserProfileService,
+        ResizeDetectionService
     ]
 })
 export class NutrigenicModule { }

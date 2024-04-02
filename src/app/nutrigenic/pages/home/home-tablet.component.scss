@@ -1,0 +1,118 @@
+@media screen and (min-width: 501px) and (max-width: 979px) {
+    .adaptiveImgHeight {
+        height: 350px;
+    }
+
+    .imgMain {
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        float: right;
+        overflow: hidden;
+        transform-origin: top left;
+    }
+
+
+    .textbox {
+        width: 65%;
+        padding: 10px;
+        font-family: Prompt;
+        font-size: 2.286rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .responsiveFont {
+        font-size: 1.429rem;
+    }
+
+    .ourMission {
+        font-size: 1rem;
+    }
+
+    .fs08 {
+        font-size: 0.8rem;
+    }
+
+    .user-icon {
+        display: flex;
+        align-items: center;
+        min-width: 190px;
+        justify-content: center;
+    }
+
+    .masterPlanCard {
+        min-width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    .secondDiv {
+        padding: 20px;
+        width: 100%;
+        border-radius: 100px;
+        background-color: white;
+        text-align: center;
+    }
+
+    .leftDish {
+        height: 29.429rem;
+        width: 100%;
+        display: block;
+    }
+
+    .leftDish img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .partner-icon {
+        align-items: center;
+    }
+
+    .partner-icon img {
+        width: 70px;
+        height: 40px;
+        margin-right: 10px;
+        object-fit: contain;
+    }
+
+    .mastrPlan {
+        width: 100%;
+        min-height: 320px;
+        border-radius: 100px;
+        background-color: white;
+        text-align: center;
+        position: relative;
+        text-align: -webkit-center;
+    }
+
+    .mastrPlan button {
+        align-items: center;
+        background-color: white;
+        border: solid 1px #d7d7de;
+        border-radius: 15px;
+        color: #5D5D66;
+    }
+
+    .overlayMasterPlan {
+        position: absolute;
+        bottom: 5%;
+        width: 90%;
+        height: 77%;
+        opacity: 0.8;
+        pointer-events: none;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 90%);
+    }
+}
+
+.overlay-banner-Tablet {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 77%;
+    opacity: 0.9;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 80%);
+}

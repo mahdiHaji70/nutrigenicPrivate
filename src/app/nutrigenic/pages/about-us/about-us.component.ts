@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { ResizeDetectionService } from '../../services/resize-detection.service';
 
 @Component({
     selector: 'app-about-us',
     templateUrl: './about-us.component.html',
-    styleUrls: ['./about-us.component.scss']
+    styleUrls: ['./about-us.component.scss', './about-us-mobile.component.scss', './about-us-tablet.component.scss']
 })
 export class AboutUsComponent {
     coreValues: any[];
     hoveredCoreValue: string | null = null;
     images: string[] = [];
     currentIndex: number = 0;
+    isTablet: boolean = false;
+    isMobile: boolean = false;
+    isDesktop: boolean = false;
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+        private sizedetection: ResizeDetectionService) {
         this.coreValues = [
             {
                 imgUrl: '../../../../assets/images/laurel-wreath-first.png',
@@ -71,6 +76,15 @@ export class AboutUsComponent {
         this.startRotation();
     }
 
+    ngOnInit(){
+        this.sizedetection.refreshSize();
+        this.sizedetection.sizeCondition$.subscribe(data => {
+            this.isDesktop = data.isDesktop;
+            this.isTablet = data.isTablet;
+            this.isMobile = data.isMobile;
+
+          });
+    }
 
     startRotation(): void {
         setInterval(() => {
@@ -82,8 +96,4 @@ export class AboutUsComponent {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
     }
 
-    hoverCoreValues(title: string) {
-        debugger;
-        var x = title;
-    }
 }

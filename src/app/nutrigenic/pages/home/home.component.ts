@@ -1,10 +1,12 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Subscription, debounceTime, fromEvent } from 'rxjs';
+import { UserProfileService } from '../../services/profile/user-profile.service';
+import { ResizeDetectionService } from '../../services/resize-detection.service';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss', './home-mobile.component.scss', './home-tablet.component.scss']
 })
 export class HomeComponent {
     chefs: any[] = [];
@@ -16,9 +18,21 @@ export class HomeComponent {
     comments: any = [];
     responsiveOptions: any[] = [];
     images: string[] = [];
-    constructor() {
+    isTablet: boolean = false;
+    isMobile: boolean = false;
+    isDesktop: boolean = false;
+    constructor(private sizedetection: ResizeDetectionService) {
     }
+
     ngOnInit() {
+        this.sizedetection.refreshSize();
+        this.sizedetection.sizeCondition$.subscribe(data => {
+            this.isDesktop = data.isDesktop;
+            this.isTablet = data.isTablet;
+            this.isMobile = data.isMobile;
+
+          });
+
         this.chefs = [
             {
                 id: 1, name: 'name', sureName: 'Surename', imgUrl: '../../../../assets/images/Dish-right.png'
@@ -80,26 +94,11 @@ export class HomeComponent {
             'assets/images/Salvo.png',
             'assets/images/clorence.png',
   ];
-        this.responsiveOptions = [
-            {
-                breakpoint: '1024px',
-                numVisible: 3,
-                numScroll: 3
-            },
-            {
-                breakpoint: '768px',
-                numVisible: 2,
-                numScroll: 2
-            },
-            {
-                breakpoint: '560px',
-                numVisible: 1,
-                numScroll: 1
-            }
-        ];
     }
 
     onItemClick(item: any): void {
         this.selectedMasterTab = item.label;
     }
+
+    
 }

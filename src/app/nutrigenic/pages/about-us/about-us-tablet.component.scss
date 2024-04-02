@@ -1,0 +1,73 @@
+@media screen and (min-width: 501px) and (max-width: 979px) {
+    .coreValuesItem {
+        margin-right: 3rem;
+        min-width: 150px;
+    }
+
+    .coreValuesmargin {
+        margin-top: 6rem !important;
+    }
+
+    .ourFounderMargin {
+        margin-top: 95rem !important;
+    }
+
+    .text-color {
+        color: #5D5D66;
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+
+    .our-team {
+        margin-top: 5rem;
+    }
+
+    .secondDiv {
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        margin-top: -35% !important;
+        border-radius: 100px;
+        background-color: white;
+        text-align: center;
+
+    }
+
+    .thirdDiv {
+        padding: 20px;
+        //position: absolute;
+        width: 100%;
+        //margin-top: -15%;
+        border-radius: 100px;
+        background-color: white;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .quote-left {
+        width: 74px;
+        height: 74px;
+        margin-right: 2rem;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        margin-left: -74px;
+    }
+    .quote-left img {
+        width: 74px;
+        height: 74px;
+    }
+
+    .quote-right {
+        width: 74px;
+        height: 74px;
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        margin-right: -74px;
+    }
+    .quote-right img {
+        width: 74px;
+        height: 74px;
+    }
+}

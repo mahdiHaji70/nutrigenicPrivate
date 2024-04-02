@@ -1,4 +1,16 @@
-.categoriesButton{
+
+
+@media screen and (min-width: 1700px) {
+  .responsiveFont {
+    font-size: 1.4rem;
+  }
+
+  .blogFont{
+    font-size: 2.286rem;
+    font-weight: 600;
+  }
+
+  .categoriesButton {
     align-items: center;
     background-color: white;
     border: solid 1px #d7d7de;
@@ -6,16 +18,81 @@
     color: #5D5D66;
     font-size: 1.143rem;
     font-weight: 300;
+  }
 }
 
-@media screen and (min-width: 1700px) {
-    .responsiveFont {
-      font-size: 1.4rem;
-    }
+@media screen and (min-width: 980px) and (max-width: 1699px) {
+  .responsiveFont {
+    font-size: 1rem;
   }
-  
-  @media screen and (max-width: 1699px) {
-    .responsiveFont {
-      font-size: 1rem;
-    }
+
+  .blogFont{
+    font-size: 2.286rem;
+    font-weight: 600;
   }
+
+  .categoriesButton {
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 30px;
+    color: #5D5D66;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 979px) {
+  .responsiveFont {
+    font-size: 1rem;
+  }
+
+  .blogFont{
+    font-size: 1.714rem;
+    font-weight: 600;
+  }
+
+  .categoriesButton {
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 30px;
+    color: #5D5D66;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .responsiveFont {
+    font-size: 1rem;
+  }
+
+  .blogFont{
+    font-size: 1.571rem;
+    font-weight: 600;
+  }
+
+  .categoriesButton {
+    align-items: center;
+    background-color: white;
+    border: solid 1px #d7d7de;
+    border-radius: 30px;
+    color: #5D5D66;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+
+
+.shadow {
+  box-shadow: 0px 10px 30px 0px #6363B11A !important;
+}
+
+.blogText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

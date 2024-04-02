@@ -1,54 +1,84 @@
-<div id="layoutHeader" class="layout-topbar topbar-content" style="background-color: #F9F9FB;">
-    <div style="margin-right: 8%;">
+<!-- Desktop -->
+<div id="layoutHeader" class="layout-topbar topbar-content" style="background-color: #F9F9FB;" *ngIf="isDesktop">
+    <div style="margin-right: 20%;">
         <img src="../../../../../assets/images/Logo.png" style="height: 10rem;width: 16rem;object-fit: contain;" />
     </div>
-    <div class="d-flex mx-auto">
+    <div class="d-flex w-100 mx-auto" style="position: relative;">
         <div>
             <ul class="horizontal-menu">
-                <li *ngFor="let item of items" [class.selected]="selectedItem === item.url"
-                    (click)="onItemClick(item)">
+                <li *ngFor="let item of items" [class.selected]="selectedItem === item.url" (click)="onItemClick(item)">
                     <span style="font-size: 1.143rem;font-weight: 500;" *ngIf="item.url !== 'login'">
                         {{ item.label }}
                     </span>
                 </li>
             </ul>
-            <div class="menuBar">
-                <p-menubar [model]="items"></p-menubar>
-            </div>
-        </div>
+        </div>        
+    </div>
+    <div class="d-flex">
         <div class="user-icon" style="cursor: pointer;" (click)="goToCheckOut()">
             <img src="../../../../../assets/images/shopping-basket.png" alt="User Icon">
         </div>
         <div class="user-icon" style="cursor: pointer;margin-left: 1.5rem;" (click)="loginPopupManager()">
             <img src="assets/images/user.png" alt="User Icon">
-            <span>Login</span>
+            <span>{{userName}}</span>
         </div>
     </div>
 </div>
 
+<!-- Tablet And Mobile -->
+<div id="layoutHeader" class="layout-topbar topbar-content" style="background-color: #F9F9FB;" *ngIf="isTablet || isMobile">
+    <div>
+        <div class="menuBar">
+            <p-menubar [model]="items"></p-menubar>
+        </div>
+    </div>
+    <div class="mx-auto">
+        <img src="../../../../../assets/images/Logo.png" style="height: 1.714rem;width: 14.326rem;object-fit: contain;" />
+    </div>
+    <div class="" style="position: relative;">
+        <div class="d-flex">
+            <div class="user-icon" style="cursor: pointer;margin-right: 1rem;" (click)="goToCheckOut()">
+                <img src="../../../../../assets/images/shopping-basket.png" alt="User Icon">
+            </div>
+            <div class="user-icon" style="cursor: pointer;" (click)="loginPopupManager()">
+                <img src="assets/images/user.png" alt="User Icon">
+                <span>{{userName}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dialogs -->
 <p-dialog [(visible)]="loginPopupVisibility" [style]="{ width: '330px', height: '61%%' }" (onHide)="onDialogHide()">
     <div class="text-center fm-prompt">
-        <div class=" fw-bold text-black fs-4 ">
-            Log in
+        <div class=" fw-bold text-black" style="font-size: 1.429rem;">
+            Log In in
         </div>
         <div class="fm-rubik" style="font-size: 0.9rem;font-weight: bold;">
             Log In To Your Account To Continue
         </div>
-        <button class="mt-4 btn" style="border: 1px solid #D0D5DD;width: 95%;">
+        <!-- <div class="web-center mt-4">
+            <asl-google-signin-button text='signin_with' type='standard' width='300' shape='rectangular'
+                logo_alignment='center' size='large' theme='outline'></asl-google-signin-button>
+        </div> -->
+        <button class="mt-4 btn"
+            style="border: 1px solid #D0D5DD;width: 95%;padding-top: 0.714rem;padding-bottom: 0.714rem;"
+            (click)="loginWithGoogle()">
             <img src="../../../../../assets/images/login-google.png"
-                style="height: 1.5rem;width: 1.5rem;margin-right: 0.5rem;" alt="">
-            <span class="fm-rubik" style="font-size: 0.8rem;font-weight: bold;color: #344054;">
+                style="height: 24px;width: 24px;margin-right: 0.5rem;" alt="">
+            <span class="fm-rubik" style="font-size: 0.857rem;font-weight: 400;color: #344054;">
                 Log in with Google
             </span>
         </button>
-        <button class="mt-2 btn" style="border: 1px solid #D0D5DD;width: 95%;">
+        <button class="mt-2 btn"
+            style="border: 1px solid #D0D5DD;width: 95%;padding-top: 0.714rem;padding-bottom: 0.714rem;">
             <img src="../../../../../assets/images/login-apple.png"
-                style="height: 1.5rem;width: 1.5rem;margin-right: 0.5rem;" alt="">
-            <span class="fm-rubik" style="font-size: 0.8rem;font-weight: bold;color: #344054;">
+                style="height: 24px;width: 24px;margin-right: 0.5rem;" alt="">
+            <span class="fm-rubik" style="font-size: 0.857rem;font-weight: 400;color: #344054;">
                 Log in with Apple
             </span>
         </button>
-        <div class="mt-4 d-flex align-items-center customContainer">
+        <div class="mt-3 d-flex align-items-center customContainer">
             <p-divider class="flex-grow-1"></p-divider>
             <span class="px-3 fm-rubik" style="color: #B4B4BB; font-size: 0.7rem;font-weight: bold;">or login with
                 email</span>
@@ -56,23 +86,27 @@
         </div>
         <div class="mt-3 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Email</span>
-            <input type="email" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;"
-                placeholder="Name@example.com" />
+            <input [(ngModel)]="loginModel.email" type="email" class="p-2 w-100 input-promo"
+                style="font-size: 0.9rem;font-weight: bold;" placeholder="Name@example.com" />
         </div>
         <div class="mt-1 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Password</span>
-            <input type="password" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;" />
+            <br>
+            <p-password [(ngModel)]="loginModel.password" [toggleMask]="true" [ngClass]="'input-promo'"></p-password>
         </div>
         <div class="mt-1 p-2" style="text-align: center;">
-            <button class="btn w-100 fm-prompt-bold"
-                style="color: white;background-color: #EF870A;font-size: 1.2rem;border-radius: 12px;padding-top: 0.8rem;padding-bottom: 0.8rem;">Log in</button>
+            <button [disabled]="!loginModel.email || !loginModel.password" class="btn w-100 fm-prompt fw-bold"
+                style="color: white;font-size: 1.143rem;border-radius: 12px;padding-top: 0.5rem;padding-bottom: 0.5rem;"
+                [style.background-color]="loginModel.email && loginModel.password ?  '#EF870A' : '#b4b4bb'"
+                (click)="login()">Log
+                in</button>
         </div>
         <div class="my-1 p-2 fm-rubik" style="text-align: center;">
-            <span style="font-size: 0.9rem;font-weight: bold;">
+            <span style="font-size: 0.857rem;font-weight: 400;color: #5D5D66;">
                 You dont't have an account
             </span>
-            <span class="fm-rubik-bold" style="color: #EF870A;font-size: 1rem;font-weight: 300;cursor: pointer;"
-            (click)="signInLinkToSignUp()">
+            <span class="fm-prompt" style="color: #EF870A;font-size: 1rem;font-weight: bold;cursor: pointer;"
+                (click)="signInLinkToSignUp()">
                 Sign up
             </span>
         </div>
@@ -87,21 +121,27 @@
         <div class="fm-rubik" style="font-size: 0.9rem;font-weight: bold;">
             Log In To Your Account To Continue
         </div>
-        <button class="mt-4 btn" style="border: 1px solid #D0D5DD;width: 95%;">
+        <!-- <div class="web-center mt-4">
+            <asl-google-signin-button text='signup_with' type='standard' width='290' shape='rectangular'
+                logo_alignment='center' size='large' theme='outline'></asl-google-signin-button>
+        </div> -->
+        <button class="mt-4 btn"
+            style="border: 1px solid #D0D5DD;width: 95%;padding-top: 0.714rem;padding-bottom: 0.714rem;">
             <img src="../../../../../assets/images/login-google.png"
-                style="height: 1.5rem;width: 1.5rem;margin-right: 0.5rem;" alt="">
-            <span class="fm-rubik" style="font-size: 0.8rem;font-weight: bold;color: #344054;">
+                style="height: 24px;width: 24px;margin-right: 0.5rem;" alt="">
+            <span class="fm-rubik" style="font-size: 0.857rem;font-weight: 400;color: #344054;">
                 Sign up with Google
             </span>
         </button>
-        <button class="mt-2 btn" style="border: 1px solid #D0D5DD;width: 95%;">
+        <button class="mt-2 btn"
+            style="border: 1px solid #D0D5DD;width: 95%;padding-top: 0.714rem;padding-bottom: 0.714rem;">
             <img src="../../../../../assets/images/login-apple.png"
-                style="height: 1.5rem;width: 1.5rem;margin-right: 0.5rem;" alt="">
-            <span class="fm-rubik" style="font-size: 0.8rem;font-weight: bold;color: #344054;">
+                style="height: 24px;width: 24px;margin-right: 0.5rem;" alt="">
+            <span class="fm-rubik" style="font-size: 0.857rem;font-weight: 400;color: #344054;">
                 Sign up with Apple
             </span>
         </button>
-        <div class="mt-4 d-flex align-items-center customContainer">
+        <div class="mt-3 d-flex align-items-center customContainer">
             <p-divider class="flex-grow-1"></p-divider>
             <span class="px-3 fm-rubik" style="color: #B4B4BB; font-size: 0.7rem;font-weight: bold;">or login with
                 email</span>
@@ -110,39 +150,68 @@
         <div class="mt-3 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Name</span>
             <input type="text" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;"
-                placeholder="Name" />
+                placeholder="Name" [(ngModel)]="signupModel.first_name" />
         </div>
-        <div class="mt-3 p-1 fm-rubik" style="text-align: left;">
+        <div class="mt-3 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Last name</span>
             <input type="text" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;"
-                placeholder="Last name" />
+                placeholder="Last name" [(ngModel)]="signupModel.last_name" />
         </div>
-        <div class="mt-3 p-1 fm-rubik" style="text-align: left;">
+        <div class="mt-3 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Phone number</span>
             <input type="text" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;"
-                placeholder="Phone number" />
+                placeholder="Phone number" [(ngModel)]="signupModel.phone_number" />
         </div>
         <div class="mt-1 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Email</span>
             <input type="email" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;"
-                placeholder="Name@example.com" />
+                placeholder="Name@example.com" [(ngModel)]="signupModel.email" />
         </div>
         <div class="mt-1 p-2 fm-rubik" style="text-align: left;">
             <span style="font-size: 0.8rem;color: #848790;">Password</span>
-            <input type="password" class="p-2 w-100 input-promo" style="font-size: 0.9rem;font-weight: bold;" />
+            <br>
+            <p-password [(ngModel)]="signupModel.password" [toggleMask]="true"></p-password>
+        </div>
+        <div class="mt-1 p-2 fm-rubik" style="text-align: left;">
+            <span style="font-size: 0.8rem;color: #848790;">Conferma password</span>
+            <p-password [(ngModel)]="signupModel.password_confirmation" [toggleMask]="true"></p-password>
         </div>
         <div class="mt-1 p-2" style="text-align: center;">
-            <button class="btn w-100 fm-prompt-bold"
-                style="color: white;background-color: #EF870A;font-size: 1.2rem;border-radius: 12px;padding-top: 0.8rem;padding-bottom: 0.8rem;">Sign up</button>
+            <button
+                [disabled]="!signupModel.first_name || !signupModel.last_name || !signupModel.phone_number || !signupModel.email || !signupModel.password || !signupModel.password_confirmation"
+                [style.background-color]="signupModel.first_name && signupModel.last_name && signupModel.phone_number && signupModel.email && signupModel.password && signupModel.password_confirmation ?  '#EF870A' : '#b4b4bb'"
+                class="btn w-100 fm-prompt fw-bold"
+                style="color: white;background-color: #EF870A;font-size: 1.143rem;border-radius: 12px;padding-top: 0.5rem;padding-bottom: 0.5rem;"
+                (click)="signUp()">Sign
+                up</button>
         </div>
         <div class="my-1 p-2 fm-rubik" style="text-align: center;">
-            <span style="font-size: 0.9rem;font-weight: 600;">
-                You dont't have an account
+            <span style="font-size: 0.857rem;font-weight: 400;color: #5D5D66;">
+                You already have an account
             </span>
-            <span class="fm-rubik-bold" style="color: #EF870A;font-size: 1rem;font-weight: 300;cursor: pointer;"
-            (click)="signUpLinkToSignIn()">
+            <span class="fm-prompt" style="color: #EF870A;font-size: 1rem;font-weight: bold;cursor: pointer;"
+                (click)="signInLinkToSignUp()">
                 Sign in
             </span>
         </div>
     </div>
+</p-dialog>
+
+<p-dialog [(visible)]="signupDone" [style]="{ width: '29.071rem', height: '19.429rem' }" (onHide)="onDialogHide()">
+    <div class="web-center">
+        <div>
+            <img src="../../../../../assets/images/mail-sent-icon.png" style="height: 48px;width: 48px;" alt="">
+        </div>
+        <div class="signup-done mt-4">
+            We sent you an email!
+        </div>
+        <div class="mt-2 p-2 fm-rubik" style="text-align: left;font-size: 1rem;color: #5D5D66;font-weight: 400;">
+            Please click on the link we sent you at your email to verify your identity and activate your account
+        </div>
+        <p-divider></p-divider>
+        <div class="fm-rubik">
+            <span style="color: #5D5D66;font-size: 0.849rem;">If you didn’t get any email:</span>
+            <span class="fm-prompt-bold mx-2" style="color: #EF870A;font-weight: bolder;">Send confirmation email again</span>
+        </div>
+    </div>    
 </p-dialog>

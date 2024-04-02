@@ -8,3 +8,31 @@
     margin-right: 1rem;
     margin-bottom: 1rem;
   }
+
+  .input-promo {
+    border-radius: 8px;
+    border: none;
+    background-color: #F0F4F8;
+    font-size: 1rem;
+    height: 5.143rem;
+}
+
+.input-title {
+    font-size: 0.9rem;
+    color: #848790;
+}
+
+// ::ng-deep .p-dialog {
+//   z-index: 1001 !important;
+//   filter: none;
+// }
+
+.categoriesButton{
+  align-items: center;
+  background-color: white;
+  border: solid 1px #d7d7de;
+  border-radius: 30px;
+  color: #5D5D66;
+  font-size: 1.143rem;
+  font-weight: 300;
+}

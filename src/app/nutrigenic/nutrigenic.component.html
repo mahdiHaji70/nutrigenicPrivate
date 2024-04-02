@@ -1,7 +1,7 @@
 <div class="layout-wrapper w-100 d-flex flex-column" [class.page-container-blur]="underConstruction" [ngClass]="containerClass"
   style="background-color: #F9F9FB;" [style.pointer-events]="underConstruction ? 'none' : 'all'">
   <app-header></app-header>
-  <div style="margin-top: 6rem;">
+  <div [style]="isDesktop ? 'margin-top: 6rem;' : 'margin-top: 4.5rem'">
     <!-- <app-sidebar></app-sidebar> -->
     <div class="">
       <router-outlet></router-outlet>

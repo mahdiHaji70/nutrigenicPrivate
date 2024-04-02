@@ -1,6 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import notiflix from 'notiflix';
 import { MenuItem } from 'primeng/api';
+import { LoginModel } from 'src/app/nutrigenic/models/auth/login-model';
+import { SignUpModel } from 'src/app/nutrigenic/models/auth/signup-model';
+import { AuthService } from 'src/app/nutrigenic/services/auth/auth.service';
+import { JwtTokenService } from 'src/app/nutrigenic/services/auth/jwt-token.service';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import { GoogleSigninButtonDirective } from '@abacritt/angularx-social-login';
+import { ResizeDetectionService } from 'src/app/nutrigenic/services/resize-detection.service';
+
+//declare const gapi: any;
 
 @Component({
     selector: 'app-header',
@@ -8,38 +18,43 @@ import { MenuItem } from 'primeng/api';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-    menuItems = [
-        {
-            name: 'Home',
-            url: 'home'
-        },
-        {
-            name: 'About us',
-            url: 'about-us'
-        },
-        {
-            name: 'Blog',
-            url: 'blog'
-        },
-        {
-            name: 'Plans',
-            url: 'plans'
-        },
-        {
-            name: 'Our shop',
-            url: 'our-shop'
-        }
-    ];
+    loginModel: LoginModel = new LoginModel();
+    signupModel: SignUpModel = new SignUpModel();
+    menuItems: any[] = [];
     selectedItem?: string | null;
     items: MenuItem[] = [];
     loginPopupVisibility = false;
     signUpPopupVisibility = false;
+    isLogin: boolean = false;
+    userName: string = 'Login';
+    signupDone: boolean = false;
+    accessToken: string = '';
+    GoogleLoginProvider = GoogleLoginProvider;
+    isTablet: boolean = false;
+    isMobile: boolean = false;
+    isDesktop: boolean = false;
 
-    constructor(private router: Router) {
-
-        //this.selectedItem = this.menuItems[0].name;
+    constructor(private router: Router,
+        private authService: AuthService,
+        private jwtTokenService: JwtTokenService,
+        private googleAuthService: SocialAuthService,
+        private sizedetection: ResizeDetectionService) {
     }
     ngOnInit(): void {
+        this.sizedetection.refreshSize();
+        this.sizedetection.sizeCondition$.subscribe(data => {
+            this.isDesktop = data.isDesktop;
+            this.isTablet = data.isTablet;
+            this.isMobile = data.isMobile;
+        });
+
+        this.checkUser();
+
+        // this.authService1.authState.subscribe((user: SocialUser) => {
+        //     var user = user;
+        //     console.log(user)
+        // });
+
         this.selectedItem = this.router.url.replace('/', '');
 
         this.items = [
@@ -75,6 +90,7 @@ export class HeaderComponent {
             },
         ];
     }
+
     get containerClass(): any {
         return {
             'layout-theme-light': 'light',
@@ -90,23 +106,31 @@ export class HeaderComponent {
 
     onItemClick(item: any): void {
         this.selectedItem = item.url;
-       
-            this.router
-                .navigate(['/' + item.url])
-                .then(() => { })
-                .catch(() => { });
+
+        this.router
+            .navigate(['/' + item.url])
+            .then(() => { })
+            .catch(() => { });
     }
 
-    goToCheckOut(){
+    goToCheckOut() {
         this.router
-        .navigate(['/checkout'])
-        .then(() => { })
-        .catch(() => { });
+            .navigate(['/checkout'])
+            .then(() => { })
+            .catch(() => { });
     }
 
     loginPopupManager() {
-        this.loginPopupVisibility = !this.loginPopupVisibility;
-        this.handleBlurFilter();
+        if (this.isLogin) {
+            this.router
+                .navigate(['/profile'])
+                .then(() => { })
+                .catch(() => { });
+        }
+        else {
+            this.loginPopupVisibility = !this.loginPopupVisibility;
+            this.handleBlurFilter();
+        }
     }
 
     signUpLinkToSignIn() {
@@ -134,5 +158,90 @@ export class HeaderComponent {
             document.getElementById('layoutHome')?.classList.remove('p-dialog-blur');
             document.getElementById('layoutHeader')?.classList.remove('p-dialog-blur');
         }
+    }
+
+    checkUser() {
+        this.jwtTokenService.getIsLogin().subscribe((data: any) => {
+            this.isLogin = data;
+            if (this.isLogin) {
+                this.userName = this.jwtTokenService.getUserName();
+            }
+        });
+    }
+
+    login() {
+        this.authService.login(this.loginModel).subscribe(
+            {
+                next: this.handleLoginResponse.bind(this),
+                error: this.handleError.bind(this),
+            }
+        );;
+    }
+
+    loginWithGoogle() {
+        this.googleAuthService.getAccessToken(GoogleLoginProvider.PROVIDER_ID)
+            .then((res) => {
+                this.loginPopupVisibility = !this.loginPopupVisibility;
+                this.handleBlurFilter();
+                this.authService.loginWithGoogle(res).subscribe({
+                    next: this.handleSignInWithGoogleResponse.bind(this),
+                    error: this.handleError.bind(this)
+                });
+                console.log(res)
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
+
+    signUp() {
+        this.authService.signUp(this.signupModel).subscribe(
+            {
+                next: this.handleSignupResponse.bind(this),
+                error: this.handleError.bind(this),
+            }
+        )
+    }
+
+
+    handleLoginResponse(response: any) {
+        const token = response.body.tokens.access_token;
+        const userName = response.body.user.first_name + ' ' + response.body.user.last_name;
+
+        this.jwtTokenService.setToken(token);
+        this.jwtTokenService.setUserName(userName);
+
+        this.jwtTokenService.getIsLogin().subscribe((data: any) => {
+            this.isLogin = data;
+            this.userName = this.jwtTokenService.getUserName();
+            this.loginPopupVisibility = !this.loginPopupVisibility;
+            this.handleBlurFilter();
+        });
+    }
+
+    hidePassword = true;
+
+    togglePasswordVisibility() {
+        this.hidePassword = !this.hidePassword;
+    }
+
+    handleSignupResponse(response: any) {
+        console.log('RESPONSE ', response);
+        this.signUpPopupVisibility = false;
+        this.signupDone = true;
+        // if(response) {
+
+        // }
+
+    }
+
+    handleSignInWithGoogleResponse(response: any) {
+        var x = response;
+    }
+
+    handleError(error: any): void {
+        notiflix.Notify.failure(error.error.message + '- Operation unsuccessful', {
+            position: 'right-top',
+            timeout: 3000
+        });
     }
 }
