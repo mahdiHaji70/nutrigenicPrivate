@@ -100,6 +100,10 @@ export class HeaderComponent {
         };
     }
 
+    handleMenuItemClick(event:any){
+        event.preventDefault();
+    }
+
     onItemClick(item: any): void {
         this.selectedItem = item.url;
         console.log(item.url);
