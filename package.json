@@ -14,6 +14,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^2.0.0",
     "@angular/animations": "15.2.9",
     "@angular/cdk": "15.2.9",
     "@angular/common": "15.2.9",
@@ -46,7 +47,7 @@
     "jwt-decode": "^4.0.0",
     "long-timeout": "0.1.1",
     "ngx-webcam": "0.4.1",
-    "notiflix": "3.2.6",
+    "notiflix": "^3.2.6",
     "primeicons": "^6.0.1",
     "primeng": "^15.4.0",
     "query-string": "^8.2.0",
