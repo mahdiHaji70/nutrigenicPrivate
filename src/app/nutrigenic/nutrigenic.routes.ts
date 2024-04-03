@@ -8,6 +8,7 @@ import { BlogDetailComponent } from './pages/blog/blog-detail/blog-detail.compon
 import { OurShopComponent } from './pages/ourshop/ourshop.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ActivateComponent } from './pages/activate/activate.component';
 
 export const NutrigenicRoutes: Routes = [
     {
@@ -23,6 +24,7 @@ export const NutrigenicRoutes: Routes = [
             { path: 'our-shop', component: OurShopComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'checkout', component: CheckoutComponent },
+            { path: 'activate/:token', component: ActivateComponent },
         ]
     }
 ];

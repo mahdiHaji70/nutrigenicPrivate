@@ -35,6 +35,7 @@ import { PasswordModule } from 'primeng/password';
 import { GoogleLoginProvider, GoogleSigninButtonDirective, GoogleSigninButtonModule,SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { UserProfileService } from './services/profile/user-profile.service';
 import { ResizeDetectionService } from './services/resize-detection.service';
+import { ActivateComponent } from './pages/activate/activate.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { ResizeDetectionService } from './services/resize-detection.service';
         UserMealsComponent,
         CheckoutComponent,
         AccountComponent,
-        CreditCardsComponent
+        CreditCardsComponent,
+        ActivateComponent
     ],
     imports: [
         CommonModule,

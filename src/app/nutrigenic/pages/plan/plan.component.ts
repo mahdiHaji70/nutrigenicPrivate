@@ -16,6 +16,9 @@ export class PlanComponent {
     isTablet: boolean = false;
     isMobile: boolean = false;
     isDesktop: boolean = false;
+    tabItems = ['Flexi', 'Commit', 'Expert'];
+    selectedMasterTab: string | null = 'Flexi';
+
     constructor(private sizedetection: ResizeDetectionService) { }
 
     ngOnInit(){

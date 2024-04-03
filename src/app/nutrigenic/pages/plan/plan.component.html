@@ -1,6 +1,15 @@
 <div id="layoutHome" class="web-center fm-rubik">
-    <div class="row w-75 mt-5">
-        <div class="col-md-4 mb-3 position-relative">
+    <div class="mt-2 fw-bold fm-prompt" style="color: #0F0F1F;font-size: 1.429rem;" *ngIf="isTablet">Our 3 plans:</div>
+    <div class="mt-2 fw-bold fm-prompt" style="color: #0F0F1F;font-size: 1.429rem;" *ngIf="isMobile">Our plans</div>
+    <div class="mt-2" *ngIf="isMobile">
+        <button *ngFor="let item of tabItems"
+            [style.background-color]="selectedMasterTab === item ? '#dfdfef' : 'white'"
+            (click)="selectedMasterTab = item" class="btn btn-primary mt-2 mx-2 categoriesButton">
+            {{ item }}
+        </button>
+    </div>
+    <div class="row justify-content-center mt-5" [style]="isDesktop ? 'width: 75%' : isTablet ? 'width: 95%' : 'width: 95%'">
+        <div class="mb-3 position-relative" [class]="isDesktop ? 'col-md-4' : isTablet ? 'col-md-6' : ''" *ngIf="isDesktop || isTablet || (isMobile && selectedMasterTab === 'Flexi')">
             <div class="z-2 position-absolute" style="margin-left: 5%;width: 25%;">
                 <button class="btn btn-primary mt-2 btn-plan p-1 w-100" style="font-size: 1.143rem;">To Start
                 </button>
@@ -73,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-3 position-relative">
+        <div class="mb-3 position-relative" [class]="isDesktop ? 'col-md-4' : isTablet ? 'col-md-6' : ''" *ngIf="isDesktop || isTablet || (isMobile && selectedMasterTab === 'Commit')">
             <div class="z-2 position-absolute" style="margin-left: 5%;width: 35%;">
                 <button class="btn btn-primary mt-2 btn-plan p-1 w-100" style="font-size: 1.143rem;">Recomended
                 </button>
@@ -155,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-3 position-relative">
+        <div class="mb-3 position-relative" [class]="isDesktop ? 'col-md-4' : isTablet ? 'col-md-6' : ''" *ngIf="isDesktop || isTablet || (isMobile && selectedMasterTab === 'Expert')">
             <div class="w-100 z-1" style="margin-bottom: -20%;">
                 <img class="w-100" src="../../../../assets/images/custom-back-image.png" />
             </div>

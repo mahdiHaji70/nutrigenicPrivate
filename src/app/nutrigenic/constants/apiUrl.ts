@@ -20,6 +20,10 @@ export class ApiUrl {
     return this.baseUrl + 'auth/google';
   }
 
+  static get activate(): string {
+    return this.baseUrl + 'auth/activate';
+  }
+
   static get userProfile(): string {
     return this.baseUrl + 'profile';
   }

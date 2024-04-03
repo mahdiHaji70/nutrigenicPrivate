@@ -17,17 +17,22 @@ export class AuthService {
 
   login(loginModel: LoginModel): Observable<OperationResult<any>> {
     let _url = ApiUrl.login;
-    return this.serviceCall.Post(_url, false, loginModel);    
+    return this.serviceCall.Post(_url, false, loginModel);
   }
 
   signUp(signupModel: SignUpModel): Observable<OperationResult<any>> {
     let _url = ApiUrl.signup;
-    return this.serviceCall.Post(_url, false, signupModel);    
+    return this.serviceCall.Post(_url, false, signupModel);
   }
 
   loginWithGoogle(access_token: any): Observable<OperationResult<any>> {
     let _url = ApiUrl.loginWithGoogle;
-    return this.serviceCall.Post(_url, false, {access_token: access_token});    
+    return this.serviceCall.Post(_url, false, { access_token: access_token });
+  }
+
+  activateUser(token: any) {
+    let _url = ApiUrl.activate + `/${token}`;
+    return this.serviceCall.GET(_url, false, null);
   }
 
 }

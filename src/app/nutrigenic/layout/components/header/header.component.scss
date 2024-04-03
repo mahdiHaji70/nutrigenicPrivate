@@ -49,6 +49,16 @@
     border-radius: 50%;
     margin-right: 10px;
   }
+
+  .menuBar {
+    display: block;
+    display: inline-block;
+    margin-right: 2rem;
+    cursor: pointer;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    width: 100%;
+  }
 }
 
 
@@ -140,16 +150,15 @@
     border-radius: 50%;
     margin-right: 5px;
   }
-}
 
-.menuBar {
-  display: block;
-  display: inline-block;
-  margin-right: 2rem;
-  cursor: pointer;
-  font-family: Prompt;
-  font-size: 1.3rem;
-  width: 100%;
+  .menuBar {
+    display: block;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    width: 100%;
+  }
 }
 
 ::ng-deep .p-menubar {

@@ -61,34 +61,30 @@ export class HeaderComponent {
             {
                 label: 'Home',
                 url: 'home',
-                command: () => this.onItemClick({ label: 'Home' })
+                command: () => this.onItemClick({ label: 'Home', url: 'home' })
             },
             {
                 label: 'About us',
-                command: () => this.onItemClick({ label: 'About Us' }),
+                command: () => this.onItemClick({ label: 'About Us', url: 'about-us' }),
                 url: 'about-us'
             },
             {
                 label: 'Blog',
-                command: () => this.onItemClick({ label: 'Blog' }),
+                command: () => this.onItemClick({ label: 'Blog', url: 'blog' }),
                 url: 'blog'
             },
             {
                 label: 'Plans',
-                command: () => this.onItemClick({ label: 'Plans' }),
+                command: () => this.onItemClick({ label: 'Plans', url: 'plans' }),
                 url: 'plans'
             },
             {
                 label: 'Our shop',
-                command: () => this.onItemClick({ label: 'Our shop' }),
+                command: () => this.onItemClick({ label: 'Our shop', url: 'our-shop' }),
                 url: 'our-shop'
-            },
-            {
-                label: 'Login',
-                command: () => this.onItemClick({ label: 'Login' }),
-                url: 'login'
-            },
+            }
         ];
+
     }
 
     get containerClass(): any {
@@ -106,7 +102,7 @@ export class HeaderComponent {
 
     onItemClick(item: any): void {
         this.selectedItem = item.url;
-
+        console.log(item.url);
         this.router
             .navigate(['/' + item.url])
             .then(() => { })
