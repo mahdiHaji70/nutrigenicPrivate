@@ -36,6 +36,22 @@
   }
 }
 
+@media screen and (min-width: 501px) and (max-width: 979px) {
+.title{
+  color: #0F0F1F;
+  font-size: 2.286rem;
+  font-weight: bold;
+}
+}
+
+@media screen and (max-width: 500px) {
+  .title{
+    color: #0F0F1F;
+    font-size: 1.429rem;
+    font-weight: bold;
+  }
+}
+
 .input-promo {}
 
 .mainLoginInput {

@@ -50,11 +50,6 @@ export class HeaderComponent {
 
         this.checkUser();
 
-        // this.authService1.authState.subscribe((user: SocialUser) => {
-        //     var user = user;
-        //     console.log(user)
-        // });
-
         this.selectedItem = this.router.url.replace('/', '');
 
         this.items = [
@@ -106,7 +101,6 @@ export class HeaderComponent {
 
     onItemClick(item: any): void {
         this.selectedItem = item.url;
-        console.log(item.url);
         this.router
             .navigate(['/' + item.url])
             .then(() => { })

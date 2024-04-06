@@ -1,7 +1,17 @@
 <div id="layoutHome" class="web-center">
     <div style="width: 85%;">
+        <div class="title fm-prompt web-left" *ngIf="isTablet || isMobile">Our shop</div>
+        <div class="mt-4" *ngIf="isTablet || isMobile">
+            <span class="p-input-icon-left w-100">
+                <i class="pi pi-search" style="font-size: 1rem;font-weight: bold;color: #5D5D66;"
+                    *ngIf="searchIcon"></i>
+                <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
+                    placeholder="Search meal or ingredient..." style="font-size: 1rem;font-weight: bold;color: #5D5D66;"
+                    (input)="inputTextChange($event)" [(ngModel)]="search" />
+            </span>
+        </div>
         <div class="mt-4 web-left row">
-            <div class="col-md-9">
+            <div [class]="isDesktop ? 'col-md-9' : 'col-md-12'">
                 <button *ngFor="let item of tabItems"
                     [style.background-color]="selectedMasterTab === item ? '#dfdfef' : 'white'"
                     (click)="selectedMasterTab = item" class="btn btn-primary mt-2 mx-2 categoriesButton"
@@ -9,14 +19,14 @@
                     {{ item }}
                 </button>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" *ngIf="isDesktop">
                 <span class="p-input-icon-left w-100">
-                    <i class="pi pi-search" style="font-size: 1rem;font-weight: bold;color: #5D5D66;" *ngIf="searchIcon"></i>
+                    <i class="pi pi-search" style="font-size: 1rem;font-weight: bold;color: #5D5D66;"
+                        *ngIf="searchIcon"></i>
                     <input type="text" class="p-2 input-promo mainLoginInput fm-rubik"
                         placeholder="Search meal or ingredient..."
-                        style="font-size: 1rem;font-weight: bold;color: #5D5D66;" 
-                        (input)="inputTextChange($event)"
-                        [(ngModel)]="search"/>
+                        style="font-size: 1rem;font-weight: bold;color: #5D5D66;" (input)="inputTextChange($event)"
+                        [(ngModel)]="search" />
                 </span>
             </div>
         </div>
@@ -34,7 +44,7 @@
 </div>
 
 <ng-template #listCards let-item>
-    <div class="col-md-3 mb-3 position-relative responsiveFont fm-rubik">
+    <div class="mb-3 position-relative responsiveFont fm-rubik" [class]="isDesktop ? 'col-md-3' : isTablet ? 'col-md-6' : 'col-md-12' ">
         <div class="card shadow p-3">
             <div class="">
                 <img class="w-100" [src]="item.imgUrl" style="border-radius: 12px 12px 0 0;" />

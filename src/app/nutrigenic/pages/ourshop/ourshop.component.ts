@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ResizeDetectionService } from '../../services/resize-detection.service';
 
 @Component({
     selector: 'app-ourshop',
@@ -14,9 +15,21 @@ export class OurShopComponent {
     value: number = 4
     search: string = '';
     searchIcon = true;
-    constructor(private router: Router) { }
+    isTablet: boolean = false;
+    isMobile: boolean = false;
+    isDesktop: boolean = false;
+
+    constructor(private router: Router,
+        private sizedetection: ResizeDetectionService) { }
 
     ngOnInit() {
+        this.sizedetection.refreshSize();
+        this.sizedetection.sizeCondition$.subscribe(data => {
+            this.isDesktop = data.isDesktop;
+            this.isTablet = data.isTablet;
+            this.isMobile = data.isMobile;
+        });
+
         this.listCardData = [
             {
                 imgUrl: '../../../../assets/images/masterImage.png',

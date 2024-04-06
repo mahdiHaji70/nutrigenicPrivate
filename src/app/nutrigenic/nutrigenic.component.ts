@@ -8,17 +8,17 @@ import { ResizeDetectionService } from './services/resize-detection.service';
   styleUrls: ['./nutrigenic.component.scss']
 })
 export class NutrigenicComponent {
-  underConstruction: boolean = false;
+  underConstruction: boolean = true;
   isTablet: boolean = false;
   isMobile: boolean = false;
   isDesktop: boolean = false;
 
   constructor(private router: Router,
     private sizedetection: ResizeDetectionService) {
-    // this.router
-    // .navigate(['/home'])
-    // .then(() => { })
-    // .catch(() => { });
+    this.router
+    .navigate(['/home'])
+    .then(() => { })
+    .catch(() => { });
   }
 
   ngOnInit() {
